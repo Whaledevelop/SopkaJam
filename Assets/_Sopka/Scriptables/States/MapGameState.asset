@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222dd57790d0432f8fc34e658b8de333, type: 3}
+  m_Name: MapGameState
+  m_EditorClassIdentifier: 
+  _mapViewPrefab: {fileID: 5293374383397493342, guid: 165de6f6d457db34d82d91d93e6a257f, type: 3}
+  _mapPlayerViewPrefab: {fileID: 5840379419067766012, guid: 6d194d03f5f7bec48bad970d4b9d214b, type: 3}
+  _systems:
+  - {fileID: 11400000, guid: 5cbbf0e9b151e6d40a2393367d7c91e7, type: 2}
+  - {fileID: 11400000, guid: 5f95e0265370bb641962ddb2ef126334, type: 2}
+  _startLocation: 0

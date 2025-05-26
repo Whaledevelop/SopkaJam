@@ -4,6 +4,7 @@
     {
         public GameEvents GameEvents { get; } = new GameEvents();
 
-        public PlayerModel PlayerModel { get; } = new PlayerModel();
+        public TopDownModel TopDownModel { get; } = new TopDownModel();
+        public MapModel MapModel { get; } = new MapModel();
     }
 }

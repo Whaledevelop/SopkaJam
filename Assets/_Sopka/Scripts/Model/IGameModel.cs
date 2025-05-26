@@ -4,6 +4,8 @@
     {
         public GameEvents GameEvents { get; }
 
-        public PlayerModel PlayerModel { get; }
+        public TopDownModel TopDownModel { get; }
+        
+        public MapModel MapModel { get; }
     }
 }
