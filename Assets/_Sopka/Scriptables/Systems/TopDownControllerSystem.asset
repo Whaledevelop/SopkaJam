@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eee33b5361643cf89cadb65021381d7, type: 3}
-  m_Name: GameSystemsConfig
+  m_Script: {fileID: 11500000, guid: 40137ba7446446e89a8f9b3b9045f2e0, type: 3}
+  m_Name: TopDownControllerSystem
   m_EditorClassIdentifier: 
-  _gameSystems: []
-  _updateOrder: []
+  _inputActionAsset: {fileID: -944628639613478452, guid: 221c424531bea2c41a81fac814ee8879, type: 3}
+  _moveSpeed: 3

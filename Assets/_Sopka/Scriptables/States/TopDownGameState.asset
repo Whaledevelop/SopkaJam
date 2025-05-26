@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a3c30768b84a15a45994d6180071da, type: 3}
+  m_Name: TopDownGameState
+  m_EditorClassIdentifier: 
+  _topDownPlayerViewPrefab: {fileID: 2441348919441047156, guid: 778909aa1acf4f249b243421f99b88c6, type: 3}
+  _topDownControllerSystem: {fileID: 11400000, guid: ff3c237856a8c694c9c2023b2c03aef0, type: 2}
+  _locationPrefab: {fileID: 2129260701927028574, guid: 2ede74df07c93cd408fcffd3261620c7, type: 3}

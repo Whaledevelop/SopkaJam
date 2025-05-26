@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb0060a174ca484e9620c62c49dfaba4, type: 3}
   m_Name: UIService
   m_EditorClassIdentifier: 
-  _canvasPrefab: {fileID: 0}
+  _canvasPrefab: {fileID: 6135107836620652968, guid: 15beacce7a3107d4b81417ef32023b34, type: 3}
