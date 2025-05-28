@@ -6,5 +6,6 @@
 
         public TopDownModel TopDownModel { get; } = new TopDownModel();
         public MapModel MapModel { get; } = new MapModel();
+        public DialogModel DialogModel { get; } = new DialogModel();
     }
 }

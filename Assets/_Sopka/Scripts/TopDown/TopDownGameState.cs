@@ -11,9 +11,6 @@ namespace Sopka
     {
         [SerializeField] 
         private TopDownPlayerView _topDownPlayerViewPrefab;
-        
-        [SerializeField]
-        private TopDownControllerSystem _topDownControllerSystem;
 
         [SerializeField] private GameObject _locationPrefab;
         
@@ -27,22 +24,31 @@ namespace Sopka
         
         private TopDownPlayerView _topDownPlayerView;
         
-        protected override async UniTask OnInitializeAsync(CancellationToken cancellationToken)
+        protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {
             _topDownPlayerView = Instantiate(_topDownPlayerViewPrefab, _sceneModel.PlayerRoot);
 
             _gameModel.TopDownModel.TopDownPlayerView = _topDownPlayerView;
 
             _locationInstance = Instantiate(_locationPrefab);
-            
-            await _gameSystemsService.AddSystemAsync(_topDownControllerSystem, cancellationToken);
+            return UniTask.CompletedTask;
         }
 
-        protected override async UniTask OnReleaseAsync(CancellationToken cancellationToken)
+        protected override UniTask OnReleaseAsync(CancellationToken cancellationToken)
         {
             Destroy(_topDownPlayerView.gameObject);
             Destroy(_locationInstance);
-            await _gameSystemsService.RemoveSystemAsync(_topDownControllerSystem, cancellationToken);
+            return UniTask.CompletedTask;
+        }
+
+        public override UniTask EnableAsync(CancellationToken cancellationToken)
+        {
+            return UniTask.CompletedTask;
+        }
+
+        public override UniTask DisableAsync(CancellationToken cancellationToken)
+        {
+            return UniTask.CompletedTask;
         }
     }
 }

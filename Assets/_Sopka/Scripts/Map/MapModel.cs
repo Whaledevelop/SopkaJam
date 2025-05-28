@@ -3,12 +3,6 @@ using Whaledevelop.Reactive;
 
 namespace Sopka
 {
-    public enum MapPlayerState
-    {
-        Static,
-        Moving
-    }
-    
     public class MapModel
     {
         public MapView MapView;
@@ -21,5 +15,12 @@ namespace Sopka
         public MapPath CurrentPath;
 
         public MapPlayerState MapPlayerState;
+        
+
+        public ReactiveCollection<MapLocationCode> OpenedLocations;
+        public ReactiveCollection<MapPathCode> OpenedPaths;
+        public ReactiveCollection<ObjectOnMapCode> ActiveObjects;
+        
+        public readonly MapConditionsModel ConditionsModel = new();
     }
 }

@@ -1,3 +1,6 @@
 [submodule "Assets/_Whaledevelop"]
 	path = Assets/_Whaledevelop
 	url = https://github.com/Whaledevelop/Whaledevelop.git
+[submodule "Assets/_Whaledevelop.NodeGraph"]
+	path = Assets/_Whaledevelop.NodeGraph
+	url = https://github.com/Whaledevelop/Whaledevelop.NodeGraph.git

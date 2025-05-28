@@ -12,3 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952d3264e5704c18a68173a57328c29c, type: 3}
   m_Name: GameStatesService
   m_EditorClassIdentifier: 
+  _defaultTransition:
+    rid: 5913163185803493460
+  _transitionEntries: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5913163185803493460
+      type: {class: GameSystemsGameTransition, ns: Whaledevelop.Transitions, asm: Assembly-CSharp}
+      data:
+        _keepDuplicateSystems: 1

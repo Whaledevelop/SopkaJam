@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02d1bf4224343278cefa4f9a7c01aad, type: 3}
+  m_Name: ObjectsOnMapSystem
+  m_EditorClassIdentifier: 
+  _objectOnMapEventsData:
+  - _code: 0
+    _action:
+      rid: 5913163185803493555
+  references:
+    version: 2
+    RefIds:
+    - rid: 5913163185803493555
+      type: {class: StartDialogIAsyncAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _dialogSettings: {fileID: 11400000, guid: 6be071c0cff1ed14f8eaf2fa1235ba55, type: 2}
+        _dialogGameState: {fileID: 11400000, guid: 1dc8f2cdef6899d4ca28f5960d99eab7, type: 2}

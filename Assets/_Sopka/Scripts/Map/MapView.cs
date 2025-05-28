@@ -9,9 +9,14 @@ namespace Sopka
         [SerializeField] private SerializableDictionary<MapLocationCode, MapLocationView> _mapLocationViews;
         
         [SerializeField] private MapPath[] _mapPaths;
+        
+        [SerializeField] private SerializableDictionary<ObjectOnMapCode, ObjectOnMapView> _objectOnMapViews;
 
         public IReadOnlyDictionary<MapLocationCode, MapLocationView> MapLocationViews => _mapLocationViews;
 
         public IEnumerable<MapPath> MapPaths => _mapPaths;
+
+        public IReadOnlyDictionary<ObjectOnMapCode, ObjectOnMapView> ObjectOnMapViews =>
+            _objectOnMapViews;
     }
 }

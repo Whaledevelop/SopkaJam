@@ -7,5 +7,7 @@
         public TopDownModel TopDownModel { get; }
         
         public MapModel MapModel { get; }
+        
+        public DialogModel DialogModel { get; } 
     }
 }

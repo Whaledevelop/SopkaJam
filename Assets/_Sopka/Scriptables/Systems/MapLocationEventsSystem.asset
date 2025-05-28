@@ -12,4 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c13a33a485749ddbdad975a1f3021ec, type: 3}
   m_Name: MapLocationEventsSystem
   m_EditorClassIdentifier: 
-  _topDownGameState: {fileID: 11400000, guid: 1dda61c152299774791aade99c419603, type: 2}
+  _locationsEventsData:
+  - rid: 5913163185803493475
+  references:
+    version: 2
+    RefIds:
+    - rid: 5913163185803493475
+      type: {class: LocationEventData, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _mapLocationCode: 1
+        _action:
+          rid: 5913163185803493511
+        _timeoutBeforeAction: 0
+        _requiredConditions: 00000000
+    - rid: 5913163185803493511
+      type: {class: StartDialogIAsyncAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _dialogSettings: {fileID: 11400000, guid: c3535b90ae7de51419de21ee849a19ba, type: 2}
+        _dialogGameState: {fileID: 11400000, guid: 1dc8f2cdef6899d4ca28f5960d99eab7, type: 2}
