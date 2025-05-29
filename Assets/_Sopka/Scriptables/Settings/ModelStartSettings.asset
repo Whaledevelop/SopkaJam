@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48f702ede90602747b6e4572cf65f1b6, type: 3}
-  m_Name: DialogsTempGraph
+  m_Script: {fileID: 11500000, guid: 8be906053f214d639727e9af03229723, type: 3}
+  m_Name: ModelStartSettings
   m_EditorClassIdentifier: 
-  _nodes: []
-  _edges: []
-  references:
-    version: 2
-    RefIds: []
+  _resources:
+    _teamMembers: 10
+    _supplies: 10
+    _hungerProgress: 1
+    _hungerActive: 1
+    _hungerDefaultSpeed: 1

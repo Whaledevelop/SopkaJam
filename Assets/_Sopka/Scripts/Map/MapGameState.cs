@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Whaledevelop;
 using Whaledevelop.Reactive;
+using Whaledevelop.UI;
 
 namespace Sopka
 {
@@ -22,10 +23,16 @@ namespace Sopka
         [SerializeField] private MapPathCode[] _openedPathsFromStart;
 
         [SerializeReference] private IAction _initialAction;
+
+        [SerializeField] private MapHUDView _mapHUDViewPrefab;
         
         [Inject] private IGameModel _gameModel;
 
         [Inject] private IDiContainer _diContainer;
+
+        [Inject] private IUIService _uiService;
+        
+        private MapHUDViewModel _mapHUDViewModel;
         
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {
@@ -54,11 +61,9 @@ namespace Sopka
 
             _gameModel.MapModel.ActiveObjects = new ReactiveCollection<ObjectOnMapCode>();
             
-            Debug.Log($"Initialize Map");
-            
             _diContainer.Inject(_initialAction);
             _initialAction.Execute();
-            
+            OpenHUD();
             return UniTask.CompletedTask;
         }
 
@@ -72,6 +77,7 @@ namespace Sopka
             Destroy(_gameModel.MapModel.MapPlayerView.gameObject);
             _gameModel.MapModel.MapView = null;
             _gameModel.MapModel.MapPlayerView = null;
+            CloseHUD();
             return UniTask.CompletedTask;
         }
 
@@ -92,12 +98,30 @@ namespace Sopka
             {
                 mapPath.LineRenderer.enabled = openedPaths.Contains(mapPath.PathCode);
             }
+
+            OpenHUD();
+            
             return UniTask.CompletedTask;
+        }
+
+        private void OpenHUD()
+        {
+            CloseHUD();
+            var resourcesModel = _gameModel.ResourcesModel;
+            _mapHUDViewModel = new MapHUDViewModel(resourcesModel.TeamMembersCount, resourcesModel.SuppliesCount, resourcesModel.HungerProgress);
+            _uiService.OpenView(_mapHUDViewPrefab, _mapHUDViewModel);
+        }
+
+        private void CloseHUD()
+        {
+            if (_mapHUDViewModel != null)
+            {
+                _uiService.CloseView(_mapHUDViewModel);
+            }
         }
 
         public override UniTask DisableAsync(CancellationToken cancellationToken)
         {
-            Debug.Log("Disable Map");
             _gameModel.MapModel.MapView.gameObject.SetActive(false);
             _gameModel.MapModel.MapPlayerView.gameObject.SetActive(false);
             
@@ -109,6 +133,8 @@ namespace Sopka
             {
                 mapPath.LineRenderer.enabled = false;
             }
+
+            CloseHUD();
             return UniTask.CompletedTask;
         }
     }

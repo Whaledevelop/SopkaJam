@@ -4,6 +4,5 @@
     {
         StartDialog,
         DesuHelped,
-        DesuRude
     }
 }

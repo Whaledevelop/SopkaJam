@@ -4,6 +4,6 @@ namespace Sopka
 {
     public class MapConditionsModel
     {
-        public ReactiveCollection<ConditionCode> FulfilledConditions = new ();
+        public readonly ReactiveCollection<ConditionCode> FulfilledConditions = new ();
     }
 }

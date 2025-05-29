@@ -2,10 +2,17 @@
 {
     public class GameModel : IGameModel
     {
-        public GameEvents GameEvents { get; } = new GameEvents();
+        public GameEvents GameEvents { get; } = new();
 
-        public TopDownModel TopDownModel { get; } = new TopDownModel();
-        public MapModel MapModel { get; } = new MapModel();
-        public DialogModel DialogModel { get; } = new DialogModel();
+        public TopDownModel TopDownModel { get; } = new();
+        public MapModel MapModel { get; } = new();
+        public DialogModel DialogModel { get; } = new();
+        
+        public ResourcesModel ResourcesModel { get; set; }
+
+        public GameModel(ModelStartSettings settings)
+        {
+            ResourcesModel = new ResourcesModel(settings.Resources);
+        }
     }
 }
