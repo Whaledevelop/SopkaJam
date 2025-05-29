@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4911f8032b5d43c1acfa04c6606ee59d, type: 3}
-  m_Name: Arseniev
+  m_Name: MainCharacter
   m_EditorClassIdentifier: 
-  _displayName: "\u0410\u0440\u0441\u0435\u043D\u044C\u0435\u0432"
-  _icon: {fileID: -5897132968559310282, guid: 1d12905cd2fdac44e8187d7377eeb685, type: 3}
-  _textColor: {r: 1, g: 0, b: 0.0766139, a: 1}
+  _displayName: "\u0414\u0435\u0440\u0441\u0443 \u0423\u0437\u0430\u043B\u0430"
+  _icon: {fileID: 7103749574173715010, guid: 99cad157ef5560746921ca19aa097e28, type: 3}
+  _textColor: {r: 0, g: 0.050397873, b: 1, a: 1}

@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8be906053f214d639727e9af03229723, type: 3}
-  m_Name: ModelStartSettings
+  m_Script: {fileID: 11500000, guid: 4911f8032b5d43c1acfa04c6606ee59d, type: 3}
+  m_Name: Narrator
   m_EditorClassIdentifier: 
-  _resources:
-    _teamMembers: 10
-    _supplies: 10
-    _hungerProgress: 1
-    _hungerActive: 1
-    _hungerDefaultSpeed: 0.5
+  _displayName: 
+  _icon: {fileID: 0}
+  _textColor: {r: 0, g: 0, b: 0, a: 0}

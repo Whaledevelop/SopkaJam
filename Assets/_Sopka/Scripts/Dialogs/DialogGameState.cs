@@ -11,7 +11,7 @@ namespace Sopka
     [CreateAssetMenu(menuName = "Sopka/States/DialogGameState", fileName = "DialogGameState")]
     public class DialogGameState : GameState
     {
-        [SerializeReference] private IAction _action;
+        // [SerializeReference] private IAction _action;
         
         [Inject] private IGameModel _gameModel;
 
@@ -27,15 +27,21 @@ namespace Sopka
 
         private async UniTask ProcessCurrentDialogAsync(CancellationToken cancellationToken)
         {
-            if (_gameModel.DialogModel.CurrentDialogSettings == null)
+            var dialogSettings = _gameModel.DialogModel.PendingDialogSettings;
+            if (dialogSettings == null)
             {
                 Debug.LogError("No CurrentDialogSettings");
                 return;
             }
-            await _dialogsService.ExecuteDialogAsync(_gameModel.DialogModel.CurrentDialogSettings, cancellationToken);
-            _gameModel.DialogModel.CurrentDialogSettings = null;
-            _diContainer.Inject(_action);
-            _action.Execute();
+            await _dialogsService.ExecuteDialogAsync(dialogSettings, cancellationToken);
+            _gameModel.DialogModel.ProcessedDialogs.Add(dialogSettings);
+            _gameModel.DialogModel.PendingDialogSettings = null;
+
+            if (dialogSettings.AfterDialogAction != null)
+            {
+                _diContainer.Inject(dialogSettings.AfterDialogAction);
+                dialogSettings.AfterDialogAction.Execute();
+            }
         }
 
         public override UniTask EnableAsync(CancellationToken cancellationToken)

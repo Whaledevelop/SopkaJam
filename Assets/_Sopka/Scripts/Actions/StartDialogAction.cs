@@ -22,7 +22,8 @@ namespace Sopka
         
         public override UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {
-            _gameModel.DialogModel.CurrentDialogSettings = _dialogSettings;
+            Debug.Log("StartDialogIAsyncAction");
+            _gameModel.DialogModel.PendingDialogSettings = _dialogSettings;
             return _gameStatesService.ChangeStateAsync(_dialogGameState, cancellationToken);
         }
     }

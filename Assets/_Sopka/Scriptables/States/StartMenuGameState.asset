@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdf4f7c2bfc477d9f3814cae168ea70, type: 3}
+  m_Name: StartMenuGameState
+  m_EditorClassIdentifier: 
+  _gameSystems: []
+  _startMenuViewPrefab: {fileID: 76926681961858259, guid: 3740521c9e758834b92a2b3684698a61, type: 3}
+  _startGameAction:
+    rid: 5913163213818298502
+  references:
+    version: 2
+    RefIds:
+    - rid: 5913163213818298502
+      type: {class: StartDialogIAsyncAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _dialogSettings: {fileID: 11400000, guid: cbf9ee4998b66ba41af8b88b3342de9f, type: 2}
+        _dialogGameState: {fileID: 11400000, guid: 1dc8f2cdef6899d4ca28f5960d99eab7, type: 2}

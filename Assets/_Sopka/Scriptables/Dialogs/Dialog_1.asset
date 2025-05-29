@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5111dec562952554aa39e8fb249ec7c0, type: 3}
+  m_Name: Dialog_1
+  m_EditorClassIdentifier: 
+  _graph:
+    _nodes:
+    - rid: 5913163213818298492
+    - rid: 5913163213818298494
+    - rid: 5913163213818298496
+    - rid: 5913163213818298498
+    - rid: 5913163213818298500
+    _edges:
+    - _inputNodeGuid: 91d19507-9140-41ca-a156-27cf7c305142
+      _inputPortName: Start
+      _outputNodeGuid: 533c1510-bdef-42c6-9a7f-07172f7c9951
+      _outputPortName: Next
+    - _inputNodeGuid: 454775d1-10f1-4d74-b2e1-96864e3a5da8
+      _inputPortName: Start
+      _outputNodeGuid: 91d19507-9140-41ca-a156-27cf7c305142
+      _outputPortName: Next
+    - _inputNodeGuid: b65499e6-414c-4fa5-ae50-f2a0b9220537
+      _inputPortName: Start
+      _outputNodeGuid: 454775d1-10f1-4d74-b2e1-96864e3a5da8
+      _outputPortName: Next
+    - _inputNodeGuid: 9d07ed85-a927-48a6-8ebb-3635fbea3d78
+      _inputPortName: Start
+      _outputNodeGuid: b65499e6-414c-4fa5-ae50-f2a0b9220537
+      _outputPortName: Next
+  _speakers:
+  - {fileID: 11400000, guid: 6db3441afceb584479004891e2e5f69b, type: 2}
+  _afterDialogAction:
+    rid: 5913163213818298515
+  references:
+    version: 2
+    RefIds:
+    - rid: 5913163213818298492
+      type: {class: StartDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 533c1510-bdef-42c6-9a7f-07172f7c9951
+    - rid: 5913163213818298494
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 91d19507-9140-41ca-a156-27cf7c305142
+        _data:
+          _speakerId: Narrator
+          _text: "24 \u0438\u044E\u043D\u044F 1908 \u0433\u043E\u0434\u0430 \u043D\u0430\u0448
+            \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u043E\u0442\u0440\u044F\u0434
+            \u0442\u0440\u043E\u043D\u0443\u043B\u0441\u044F \u0432 \u043F\u0443\u0442\u044C\u2026 "
+    - rid: 5913163213818298496
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 454775d1-10f1-4d74-b2e1-96864e3a5da8
+        _data:
+          _speakerId: Narrator
+          _text: "\u041F\u043E\u043A\u0430 \u043F\u0440\u043E\u0432\u043E\u0434\u043D\u0438\u043A\u0438
+            \u0448\u043B\u0438 \u0441 \u043D\u0430\u043C\u0438, \u0432\u0441\u0435
+            \u0431\u044B\u043B\u043E \u0432 \u043F\u043E\u0440\u044F\u0434\u043A\u0435. "
+    - rid: 5913163213818298498
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: b65499e6-414c-4fa5-ae50-f2a0b9220537
+        _data:
+          _speakerId: Narrator
+          _text: "\u041E\u0441\u0442\u0430\u0432\u0448\u0438\u0441\u044C \u043E\u0434\u043D\u0438,
+            \u043C\u044B \u043D\u0430\u0442\u043A\u043D\u0443\u043B\u0438\u0441\u044C
+            \u0432 \u0442\u0430\u0439\u0433\u0435 \u043D\u0430 \u043F\u043E\u043B\u0443\u0440\u0430\u0437\u0440\u0443\u0448\u0435\u043D\u043D\u0443\u044E
+            \u0444\u0430\u043D\u0437\u0443. \u0418 \u043D\u0435 \u0431\u044B\u043B\u043E
+            \u0440\u044F\u0434\u043E\u043C \u0441 \u043D\u0430\u043C\u0438 \u043C\u0435\u0441\u0442\u043D\u044B\u0445,
+            \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0440\u0435\u0434\u0443\u043F\u0440\u0435\u0434\u0438\u043B\u0438
+            \u0431\u044B \u043D\u0430\u0441\u2026"
+    - rid: 5913163213818298500
+      type: {class: EndDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 9d07ed85-a927-48a6-8ebb-3635fbea3d78
+        _finishBranchId: 
+    - rid: 5913163213818298515
+      type: {class: StartDialogIAsyncAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _dialogSettings: {fileID: 11400000, guid: 100a6450afd76114f8655c8690cace36, type: 2}
+        _dialogGameState: {fileID: 11400000, guid: 1dc8f2cdef6899d4ca28f5960d99eab7, type: 2}
