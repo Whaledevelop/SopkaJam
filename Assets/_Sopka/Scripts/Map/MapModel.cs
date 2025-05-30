@@ -20,7 +20,13 @@ namespace Sopka
         public ReactiveCollection<MapLocationCode> OpenedLocations;
         public ReactiveCollection<MapPathCode> OpenedPaths;
         public ReactiveCollection<ObjectOnMapCode> ActiveObjects;
+
+        public readonly ReactiveCollection<ConditionCode> FulfilledConditions = new ();
         
-        public readonly MapConditionsModel ConditionsModel = new();
+
+        public ReactiveValue<float> MapMovementSpeed = new();
+
+        // TODO перенести в стартовые настройки
+        public float DefaultMovementSpeed;
     }
 }

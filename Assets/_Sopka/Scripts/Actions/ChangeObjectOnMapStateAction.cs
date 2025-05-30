@@ -21,7 +21,6 @@ namespace Sopka
         {
             if (_state)
             {
-                Debug.Log($"Add {_code} to ActiveObjects");
                 _gameModel.MapModel.ActiveObjects.Add(_code);
             }
             else

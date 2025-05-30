@@ -15,6 +15,9 @@ namespace Sopka
         
         [SerializeField]
         private GameState _dialogGameState;
+
+        [SerializeField] 
+        private bool _notStartIfAlreadyProcessed = true;
         
         [Inject] private IGameModel _gameModel;
 
@@ -22,6 +25,10 @@ namespace Sopka
         
         public override UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {
+            if (_notStartIfAlreadyProcessed && _gameModel.DialogModel.ProcessedDialogs.Contains(_dialogSettings))
+            {
+                return UniTask.CompletedTask;
+            }
             _gameModel.DialogModel.PendingDialogSettings = _dialogSettings;
             return _gameStatesService.ChangeStateAsync(_dialogGameState, cancellationToken);
         }

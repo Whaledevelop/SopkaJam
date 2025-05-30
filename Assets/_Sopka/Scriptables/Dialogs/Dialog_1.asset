@@ -40,7 +40,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6db3441afceb584479004891e2e5f69b, type: 2}
   _startBackground: {fileID: -4039110922585180417, guid: cad39dba3672db34aabd3b8db405ad73, type: 3}
   _afterDialogAction:
-    rid: 5913163213818298515
+    rid: 5913163224810520664
   references:
     version: 2
     RefIds:
@@ -84,8 +84,7 @@ MonoBehaviour:
       data:
         _guid: 9d07ed85-a927-48a6-8ebb-3635fbea3d78
         _finishBranchId: 
-    - rid: 5913163213818298515
-      type: {class: StartDialogIAsyncAction, ns: Sopka, asm: Assembly-CSharp}
+    - rid: 5913163224810520664
+      type: {class: SetGameStateAction, ns: Sopka, asm: Assembly-CSharp}
       data:
-        _dialogSettings: {fileID: 11400000, guid: 100a6450afd76114f8655c8690cace36, type: 2}
-        _dialogGameState: {fileID: 11400000, guid: 1dc8f2cdef6899d4ca28f5960d99eab7, type: 2}
+        _gameState: {fileID: 11400000, guid: dc15d407e2d668a44932afe49e38e10d, type: 2}

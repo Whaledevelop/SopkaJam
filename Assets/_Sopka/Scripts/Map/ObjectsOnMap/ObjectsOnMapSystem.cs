@@ -24,10 +24,10 @@ namespace Sopka
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {
             _gameModel.MapModel.ActiveObjects.SubscribeChanged(UpdateActiveObjects).AddToCollection(_subscriptions);
-            foreach (var (code, view) in _gameModel.MapModel.MapView.ObjectOnMapViews)
-            {
-                view.OnMouseDownEvent = () => ObjectOnMapClick(code);
-            }
+            // foreach (var (code, view) in _gameModel.MapModel.MapView.ObjectOnMapViews)
+            // {
+            //     view.OnMouseDownEvent = () => ObjectOnMapClick(code);
+            // }
 
             UpdateActiveObjects();
             return base.OnInitializeAsync(cancellationToken);
@@ -36,33 +36,32 @@ namespace Sopka
         protected override UniTask OnReleaseAsync(CancellationToken cancellationToken)
         {
             _subscriptions.Dispose();
-            foreach (var (code, view) in _gameModel.MapModel.MapView.ObjectOnMapViews)
-            {
-                view.OnMouseDownEvent = null;
-            }
+            // foreach (var (code, view) in _gameModel.MapModel.MapView.ObjectOnMapViews)
+            // {
+            //     view.OnMouseDownEvent = null;
+            // }
             return base.OnReleaseAsync(cancellationToken);
         }
 
         private void UpdateActiveObjects()
         {
             var activeObjects = _gameModel.MapModel.ActiveObjects;
-            Debug.Log($"Update Active Objects {activeObjects.Count}");
             foreach (var (code, view) in _gameModel.MapModel.MapView.ObjectOnMapViews)
             {
-                view.Renderer.enabled = activeObjects.Contains(code);
+                view.SetMode(activeObjects.Contains(code));
             }
         }
 
-        private void ObjectOnMapClick(ObjectOnMapCode code)
-        {
-            var eventData = _objectOnMapEventsData.FirstOrDefault(eventData => eventData.Code == code);
-            if (eventData == null)
-            {
-                Debug.Log($"No action for object {code}");
-                return;
-            }
-            _diContainer.Inject(eventData.Action);
-            eventData.Action.Execute();
-        }
+        // private void ObjectOnMapClick(ObjectOnMapCode code)
+        // {
+        //     var eventData = _objectOnMapEventsData.FirstOrDefault(eventData => eventData.Code == code);
+        //     if (eventData == null)
+        //     {
+        //         Debug.Log($"No action for object {code}");
+        //         return;
+        //     }
+        //     _diContainer.Inject(eventData.Action);
+        //     eventData.Action.Execute();
+        // }
     }
 }

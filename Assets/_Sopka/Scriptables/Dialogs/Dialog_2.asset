@@ -97,7 +97,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6db3441afceb584479004891e2e5f69b, type: 2}
   _startBackground: {fileID: -7395319257573302469, guid: 3b14409d730df5f44b0b3298046951e5, type: 3}
   _afterDialogAction:
-    rid: 5913163224810520657
+    rid: 5913163224810520668
   references:
     version: 2
     RefIds:
@@ -248,7 +248,24 @@ MonoBehaviour:
       data:
         _guid: 711a9991-b140-44ab-b05f-2da88f921bea
         _finishBranchId: 
-    - rid: 5913163224810520657
+    - rid: 5913163224810520668
+      type: {class: ActionsSequence, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _actions:
+        - rid: 5913163224810520669
+        - rid: 5913163224810520719
+        - rid: 5913163224810520670
+    - rid: 5913163224810520669
+      type: {class: OpenLocationAndPathAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _mapLocationCode: 2
+        _mapPathCode: 1
+    - rid: 5913163224810520670
       type: {class: SetGameStateAction, ns: Sopka, asm: Assembly-CSharp}
       data:
         _gameState: {fileID: 11400000, guid: dc15d407e2d668a44932afe49e38e10d, type: 2}
+    - rid: 5913163224810520719
+      type: {class: OpenLocationAndPathAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _mapLocationCode: 3
+        _mapPathCode: 2

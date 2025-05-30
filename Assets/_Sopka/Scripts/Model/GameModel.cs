@@ -2,8 +2,6 @@
 {
     public class GameModel : IGameModel
     {
-        public GameEvents GameEvents { get; } = new();
-
         public TopDownModel TopDownModel { get; } = new();
         public MapModel MapModel { get; } = new();
         public DialogModel DialogModel { get; } = new();
@@ -12,7 +10,7 @@
 
         public GameModel(ModelStartSettings settings)
         {
-            ResourcesModel = new ResourcesModel(settings.Resources);
+            ResourcesModel = new ResourcesModel(settings.ResourcesModel);
         }
     }
 }

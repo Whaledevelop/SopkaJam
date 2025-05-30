@@ -38,9 +38,9 @@ namespace Sopka
         private void OnPathsChanged()
         {
             var openedPaths = _gameModel.MapModel.OpenedPaths;
-            foreach (var mapPath in _gameModel.MapModel.MapView.MapPaths)
+            foreach (var (code, view) in _gameModel.MapModel.MapView.MapPathsViews)
             {
-                mapPath.LineRenderer.enabled = openedPaths.Contains(mapPath.PathCode);
+                view.LineRenderer.enabled = openedPaths.Contains(code);
             }
         }
         
@@ -56,10 +56,9 @@ namespace Sopka
             var locationEventDatas = _locationsEventsData.Where(data => data.LocationCode == locationCode).ToArray();
             if (!locationEventDatas.Any())
             {
-                Debug.Log($"No action for location {locationCode}");
                 return;
             }
-            var fulfilledConditions = _gameModel.MapModel.ConditionsModel.FulfilledConditions.ToArray();
+            var fulfilledConditions = _gameModel.MapModel.FulfilledConditions.ToArray();
             var locationEventData = fulfilledConditions.Length == 0
                 ? locationEventDatas[0]
                 : locationEventDatas.FirstOrDefault(data => data.RequiredConditions.All(condition => fulfilledConditions.Contains(condition)));
@@ -73,7 +72,6 @@ namespace Sopka
  
         private async UniTask ExecuteLocationActionAsync(LocationEventData locationEventData)
         {
-            Debug.Log($"Execute action for location {locationEventData.LocationCode}");
             if (locationEventData.TimeoutBeforeAction > 0)
             {
                 await UniTask.WaitForSeconds(locationEventData.TimeoutBeforeAction);

@@ -19,11 +19,11 @@ namespace Sopka
         {
             if (_state)
             {
-                _gameModel.MapModel.ConditionsModel.FulfilledConditions.Add(_conditionCode);
+                _gameModel.MapModel.FulfilledConditions.Add(_conditionCode);
             }
             else
             {
-                _gameModel.MapModel.ConditionsModel.FulfilledConditions.Remove(_conditionCode);
+                _gameModel.MapModel.FulfilledConditions.Remove(_conditionCode);
             }
         }
     }

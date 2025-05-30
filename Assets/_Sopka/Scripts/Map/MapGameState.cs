@@ -53,9 +53,9 @@ namespace Sopka
             }
             _gameModel.MapModel.OpenedLocations = new ReactiveCollection<MapLocationCode>(_openedLocationsFromStart);
             
-            foreach (var mapPath in _gameModel.MapModel.MapView.MapPaths)
+            foreach (var (code, view) in _gameModel.MapModel.MapView.MapPathsViews)
             {
-                mapPath.LineRenderer.enabled = _openedPathsFromStart.Contains(mapPath.PathCode);
+                view.LineRenderer.enabled = _openedPathsFromStart.Contains(code);
             }
             _gameModel.MapModel.OpenedPaths = new ReactiveCollection<MapPathCode>(_openedPathsFromStart);
 
@@ -94,9 +94,9 @@ namespace Sopka
                 view.Renderer.enabled = openedLocations.Contains(code);
             }
             var openedPaths = _gameModel.MapModel.OpenedPaths;
-            foreach (var mapPath in _gameModel.MapModel.MapView.MapPaths)
+            foreach (var (code, view) in _gameModel.MapModel.MapView.MapPathsViews)
             {
-                mapPath.LineRenderer.enabled = openedPaths.Contains(mapPath.PathCode);
+                view.LineRenderer.enabled = openedPaths.Contains(code);
             }
 
             OpenHUD();
@@ -129,9 +129,9 @@ namespace Sopka
             {
                 view.Renderer.enabled = false;
             }
-            foreach (var mapPath in _gameModel.MapModel.MapView.MapPaths)
+            foreach (var (code, view) in _gameModel.MapModel.MapView.MapPathsViews)
             {
-                mapPath.LineRenderer.enabled = false;
+                view.LineRenderer.enabled = false;
             }
 
             CloseHUD();

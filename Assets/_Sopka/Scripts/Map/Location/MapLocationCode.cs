@@ -2,11 +2,10 @@
 {
     public enum MapLocationCode
     {
-        Test1,
-        Test2,
+        Start,
+        Fanza,
         Test3,
-        Test4,
-        Test5,
-        Test6
+        Supplies_1,
+        FarPoint,
     }
 }

@@ -3,17 +3,16 @@ using UnityEngine;
 
 namespace Sopka
 {
-    public class ObjectOnMapView : MonoBehaviour
+    [RequireComponent(typeof(Collider2D))]
+    public abstract class ObjectOnMapView : MonoBehaviour
     {
-        [SerializeField] private Renderer _renderer;
-        
-        public Action OnMouseDownEvent;
+        // public Action OnMouseDownEvent;
+        //
+        // private void OnMouseDown()
+        // {
+        //     OnMouseDownEvent?.Invoke();
+        // }
 
-        public Renderer Renderer => _renderer;
-
-        private void OnMouseDown()
-        {
-            OnMouseDownEvent?.Invoke();
-        }
+        public abstract void SetMode(bool mode);
     }
 }

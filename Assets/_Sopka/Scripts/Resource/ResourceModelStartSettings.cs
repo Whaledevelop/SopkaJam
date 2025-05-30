@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Sopka
 {
     [Serializable]
-    public struct ResourceStartValues
+    public struct ResourceModelStartSettings
     {
         [SerializeField]
         private int _teamMembers;

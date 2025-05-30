@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEngine.Serialization;
 
 namespace Sopka
 {
     [CreateAssetMenu(menuName = "Sopka/Settings/ModelStartSettings", fileName = "ModelStartSettings")]
     public class ModelStartSettings : ScriptableObject
     {
+        [FormerlySerializedAs("_resources")]
         [BoxGroup("Начальные ресурсы")]
         [SerializeField]
-        private ResourceStartValues _resources;
+        private ResourceModelStartSettings _resourcesModel;
 
-        public ResourceStartValues Resources => _resources;
+        public ResourceModelStartSettings ResourcesModel => _resourcesModel;
     }
 }

@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _locationsEventsData:
   - rid: 5913163185803493475
+  - rid: 5913163224810520687
+  - rid: 5913163224810520695
   references:
     version: 2
     RefIds:
@@ -24,9 +26,59 @@ MonoBehaviour:
         _action:
           rid: 5913163185803493511
         _timeoutBeforeAction: 0
-        _requiredConditions: 00000000
+        _requiredConditions: 
     - rid: 5913163185803493511
       type: {class: StartDialogIAsyncAction, ns: Sopka, asm: Assembly-CSharp}
       data:
-        _dialogSettings: {fileID: 11400000, guid: c3535b90ae7de51419de21ee849a19ba, type: 2}
+        _dialogSettings: {fileID: 11400000, guid: 100a6450afd76114f8655c8690cace36, type: 2}
         _dialogGameState: {fileID: 11400000, guid: 1dc8f2cdef6899d4ca28f5960d99eab7, type: 2}
+        _notStartIfAlreadyProcessed: 1
+    - rid: 5913163224810520687
+      type: {class: LocationEventData, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _mapLocationCode: 3
+        _action:
+          rid: 5913163224810520689
+        _timeoutBeforeAction: 0
+        _requiredConditions: 
+    - rid: 5913163224810520689
+      type: {class: ActionsSequence, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _actions:
+        - rid: 5913163224810520692
+    - rid: 5913163224810520692
+      type: {class: ActionsSequence, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _actions:
+        - rid: 5913163224810520693
+        - rid: 5913163224810520694
+        - rid: 5913163224810520720
+    - rid: 5913163224810520693
+      type: {class: ChangeSuppliesCountAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _changeCount: 10
+    - rid: 5913163224810520694
+      type: {class: ShowPopupAsyncAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _text: "\u0412\u044B \u043D\u0430\u0448\u043B\u0438 10 \u043F\u0440\u0438\u043F\u0430\u0441\u043E\u0432!"
+        _mapPopupViewPrefab: {fileID: 1339839840007473619, guid: d914b25aa63f90f498ea0244165c9655, type: 3}
+        _animatedText: 1
+        _appendTextInterval: 0.05
+    - rid: 5913163224810520695
+      type: {class: LocationEventData, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _mapLocationCode: 2
+        _action:
+          rid: 5913163224810520696
+        _timeoutBeforeAction: 0
+        _requiredConditions: 
+    - rid: 5913163224810520696
+      type: {class: OpenLocationAndPathAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _mapLocationCode: 4
+        _mapPathCode: 4
+    - rid: 5913163224810520720
+      type: {class: OpenLocationAndPathAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _mapLocationCode: 2
+        _mapPathCode: 3

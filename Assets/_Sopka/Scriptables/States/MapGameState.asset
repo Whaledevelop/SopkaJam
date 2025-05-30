@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5cbbf0e9b151e6d40a2393367d7c91e7, type: 2}
   - {fileID: 11400000, guid: d1b5b08e237ad76479b89b609a329aac, type: 2}
   - {fileID: 11400000, guid: f84609df50aa5c44faf27449e9586183, type: 2}
+  - {fileID: 11400000, guid: 7aa2c26364f52984ebe1f0f37c7aad78, type: 2}
   _mapViewPrefab: {fileID: 5293374383397493342, guid: 165de6f6d457db34d82d91d93e6a257f, type: 3}
   _mapPlayerViewPrefab: {fileID: 5840379419067766012, guid: 6d194d03f5f7bec48bad970d4b9d214b, type: 3}
   _startLocation: 0

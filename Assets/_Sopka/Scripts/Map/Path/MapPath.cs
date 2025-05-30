@@ -12,8 +12,6 @@ namespace Sopka
     [ExecuteAlways]
     public class MapPath : MonoBehaviour
     {
-        [SerializeField] private MapPathCode _mapPathCode;
-        
         [BoxGroup("Connection")]
         [SerializeField]
         private MapLocationCode _locationA;
@@ -51,8 +49,6 @@ namespace Sopka
         public MapLocationCode LocationA => _locationA;
 
         public MapLocationCode LocationB => _locationB;
-
-        public MapPathCode PathCode => _mapPathCode;
 
         public LineRenderer LineRenderer => _lineRenderer;
 
@@ -93,7 +89,11 @@ namespace Sopka
         [Button("Generate Linear Waypoints")]
         private void GenerateLinearWaypoints()
         {
-            var mapView = FindFirstObjectByType<MapView>();
+            Debug.Log("STARTED GENERATING");
+
+            var mapView = ComponentFinder.FindObject<MapView>();
+            Debug.Log($"MapView: {mapView}");
+
             if (mapView == null)
             {
                 Debug.LogWarning("MapView not found in scene.");
@@ -101,10 +101,17 @@ namespace Sopka
             }
 
             var locationViews = mapView.MapLocationViews;
-            if (!locationViews.TryGetValue(_locationA, out var locationAView) ||
-                !locationViews.TryGetValue(_locationB, out var locationBView))
+            Debug.Log($"MapView.MapLocationViews count: {locationViews.Count}");
+
+            if (!locationViews.TryGetValue(_locationA, out var locationAView))
             {
-                Debug.LogWarning("Map locations not found in MapView.");
+                Debug.LogWarning("Location A not found");
+                return;
+            }
+
+            if (!locationViews.TryGetValue(_locationB, out var locationBView))
+            {
+                Debug.LogWarning("Location B not found");
                 return;
             }
 
@@ -145,10 +152,9 @@ namespace Sopka
             {
                 return;
             }
-
             if (_lineRenderer == null)
             {
-                var existing = GetComponentInChildren<LineRenderer>();
+                var existing = transform.GetComponentInChildren<LineRenderer>();
                 if (existing != null)
                 {
                     _lineRenderer = existing;
@@ -162,68 +168,19 @@ namespace Sopka
                     _lineRenderer = go.AddComponent<LineRenderer>();
                 }
             }
-
-            if (_roadMaterial != null)
+            _lineRenderer.positionCount = _waypoints.Length;
+            _lineRenderer.useWorldSpace = true;
+            _lineRenderer.widthMultiplier = _lineWidth;
+            _lineRenderer.startColor = _lineColor;
+            _lineRenderer.endColor = _lineColor;
+            for (int i = 0; i < _waypoints.Length; i++)
             {
-                //SetupRoadPath();
-            }
-            else
-            {
-                _lineRenderer.positionCount = _waypoints.Length;
-                _lineRenderer.useWorldSpace = true;
-                _lineRenderer.widthMultiplier = _lineWidth;
-                _lineRenderer.startColor = _lineColor;
-                _lineRenderer.endColor = _lineColor;
-
-                for (int i = 0; i < _waypoints.Length; i++)
+                if (_waypoints[i] != null)
                 {
-                    if (_waypoints[i] != null)
-                    {
-                        _lineRenderer.SetPosition(i, _waypoints[i].position);
-                    }
+                    _lineRenderer.SetPosition(i, _waypoints[i].position);
                 }
             }
-        }
-        
-        [SerializeField]
-        private Material _roadMaterial;
-        
-        [Button]
-        private void SetupRoadPath()
-        {
-            if (_lineRenderer == null || _waypoints == null || _waypoints.Length < 2)
-            {
-                return;
-            }
 
-            var positions = _waypoints
-                .Where(w => w != null)
-                .Select(w => w.position)
-                .ToArray();
-
-            _lineRenderer.positionCount = positions.Length;
-            _lineRenderer.SetPositions(positions);
-
-            _lineRenderer.material = _roadMaterial;
-            _lineRenderer.textureMode = LineTextureMode.Tile;
-            _lineRenderer.alignment = LineAlignment.TransformZ;
-
-            _lineRenderer.startWidth = _lineWidth;
-            _lineRenderer.endWidth = _lineWidth;
-
-            var length = CalculateLineLength(positions);
-            _lineRenderer.material.mainTextureScale = new Vector2(length * 0.5f, 1f);
-        }
-
-        private float CalculateLineLength(Vector3[] positions)
-        {
-            float totalLength = 0f;
-            for (int i = 1; i < positions.Length; i++)
-            {
-                totalLength += Vector3.Distance(positions[i - 1], positions[i]);
-            }
-
-            return totalLength;
         }
 
 #endif
