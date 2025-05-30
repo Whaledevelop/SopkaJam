@@ -6,6 +6,6 @@ namespace Sopka
     public class DialogModel
     {
         public ReactiveCollection<IDialogSettings> ProcessedDialogs = new();
-        public DialogSettings PendingDialogSettings { get; set; }
+        public IDialogSettings PendingDialogSettings { get; set; }
     }
 }

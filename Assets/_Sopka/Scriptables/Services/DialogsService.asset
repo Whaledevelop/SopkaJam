@@ -15,3 +15,6 @@ MonoBehaviour:
   _dialogUISettings:
     _dialogView: {fileID: 7748624931729107431, guid: b344f6bd7f66f0340aa0f4ef56f75b9f, type: 3}
     _textAppendInterval: 0.05
+    _startDialogDelay: 0.5
+    _nextLineDelay: 0
+    _clearOptionsDelay: 0

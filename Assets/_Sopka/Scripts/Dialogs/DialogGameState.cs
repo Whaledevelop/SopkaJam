@@ -11,8 +11,6 @@ namespace Sopka
     [CreateAssetMenu(menuName = "Sopka/States/DialogGameState", fileName = "DialogGameState")]
     public class DialogGameState : GameState
     {
-        // [SerializeReference] private IAction _action;
-        
         [Inject] private IGameModel _gameModel;
 
         [Inject] private IDialogsService _dialogsService;

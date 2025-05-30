@@ -38,6 +38,7 @@ MonoBehaviour:
       _outputPortName: Next
   _speakers:
   - {fileID: 11400000, guid: 6db3441afceb584479004891e2e5f69b, type: 2}
+  _startBackground: {fileID: -4039110922585180417, guid: cad39dba3672db34aabd3b8db405ad73, type: 3}
   _afterDialogAction:
     rid: 5913163213818298515
   references:

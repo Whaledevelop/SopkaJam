@@ -95,13 +95,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9703d4e68eb516347beec4f215bde8d5, type: 2}
   - {fileID: 11400000, guid: 863afc45e96b7844597d18173e73565d, type: 2}
   - {fileID: 11400000, guid: 6db3441afceb584479004891e2e5f69b, type: 2}
+  _startBackground: {fileID: -7395319257573302469, guid: 3b14409d730df5f44b0b3298046951e5, type: 3}
   _afterDialogAction:
-    rid: -2
+    rid: 5913163224810520657
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 5913163213818298446
       type: {class: StartDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
       data:
@@ -249,3 +248,7 @@ MonoBehaviour:
       data:
         _guid: 711a9991-b140-44ab-b05f-2da88f921bea
         _finishBranchId: 
+    - rid: 5913163224810520657
+      type: {class: SetGameStateAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _gameState: {fileID: 11400000, guid: dc15d407e2d668a44932afe49e38e10d, type: 2}
