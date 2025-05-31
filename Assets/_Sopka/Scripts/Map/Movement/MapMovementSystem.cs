@@ -101,7 +101,7 @@ namespace Sopka
             var mapModel = _gameModel.MapModel;
             mapPath = null;
             pathCode = default;
-            if (mapModel.MapPlayerState == MapPlayerState.Moving || mapModel.CurrentLocation == null) 
+            if (mapModel.MapPlayerState.Value == MapPlayerState.Moving || mapModel.CurrentLocation == null) 
             {
                 Debug.Log("Already moving or location not set");
                 return false;
@@ -125,6 +125,7 @@ namespace Sopka
         private void MoveAlongPath(MapPath mapPath)
         {
             var mapModel = _gameModel.MapModel;
+
             var mapView = mapModel.MapView;
             var playerTransform = mapModel.MapPlayerView.transform;
 
@@ -188,18 +189,19 @@ namespace Sopka
             _baseSpeed = _gameModel.MapModel.MapMovementSpeed.Value;
             _baseDuration = _currentTweenDistance / _baseSpeed;
 
-            mapModel.MapPlayerState = MapPlayerState.Moving;
+            mapModel.MapPlayerState.Value = MapPlayerState.Moving;
 
             _tween?.Kill();
 
+            
             _tween = playerTransform
                 .DOPath(path.ToArray(), _baseDuration, _pathType)
                 .SetEase(_ease)
                 .OnComplete(() =>
                 {
-                    Debug.Log($"== Arrived at {destination} ({endPos}) ==");
                     mapModel.CurrentLocation.Value = destination;
-                    mapModel.MapPlayerState = MapPlayerState.Static;
+                    mapModel.MapPlayerState.Value = MapPlayerState.Static;
+
                 });
         }
     }

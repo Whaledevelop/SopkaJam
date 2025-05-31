@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="project://database/Assets/Editor/DialogNodeGraph/Resources/DialogNodeGraphBackground.uss?fileID=7433441132597879392&amp;guid=61f9ec1b0abcff54996525a75c88e573&amp;type=3#DialogNodeGraphBackground" />
+</ui:UXML>

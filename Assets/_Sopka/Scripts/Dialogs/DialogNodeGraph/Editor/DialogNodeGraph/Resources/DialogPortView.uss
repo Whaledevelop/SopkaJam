@@ -1,0 +1,11 @@
+.typeDialogNode #type {
+    color: yellow;
+}
+
+.typeListKeyValueDialogNode #type {
+     color: red;
+ }
+
+.typeKeyValueDialogNode #type {
+    color: white;
+}

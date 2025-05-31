@@ -7,6 +7,8 @@ namespace Sopka
 {
     public class MapView : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer _mapSpriteRenderer;
+        
         [SerializeField] private SerializableDictionary<MapLocationCode, MapLocationView> _mapLocationViews;
         
         [SerializeField] private SerializableDictionary<MapPathCode, MapPath> _mapPathsViews;
@@ -23,5 +25,7 @@ namespace Sopka
             _objectOnMapViews;
 
         public IReadOnlyDictionary<MapPathCode, PathGnusView> PathGnusViews => _pathGnusViews;
+
+        public SpriteRenderer MapSpriteRenderer => _mapSpriteRenderer;
     }
 }
