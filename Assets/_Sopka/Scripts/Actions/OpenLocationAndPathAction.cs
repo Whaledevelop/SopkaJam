@@ -20,8 +20,6 @@ namespace Sopka
         {
             _gameModel.MapModel.OpenedPaths.Add(_mapPathCode);
             _gameModel.MapModel.OpenedLocations.Add(_mapLocationCode);
-
-            Debug.Log($"Add {_mapLocationCode}");
         }
     }
 }

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6c8010b5944889aace2f8cec076f84, type: 3}
+  m_Name: PuzzleGameState
+  m_EditorClassIdentifier: 
+  _gameSystems:
+  - {fileID: 11400000, guid: a513bcf5dda9ab84a9c1b62867f43cc2, type: 2}
+  _puzzleModelInstaller:
+    _sprites:
+    - {fileID: 982841379, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: 1239098147, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: 1211382479, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: 1626081497, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: -486242897, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: 834360330, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: 1556951858, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: -1559187286, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: 2017257208, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: 1454160476, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: -1911515117, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: -156575892, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: 1484605139, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: 586475413, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: -1033416897, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    - {fileID: 2093290606, guid: 9255ad1bae9e19f42956e755061281fd, type: 3}
+    _hintSprite: {fileID: 21300000, guid: e8e24a4293688f647b06cc2f66473187, type: 3}
+  _afterPuzzleSolvedAction:
+    rid: 5913163248634691664
+  references:
+    version: 2
+    RefIds:
+    - rid: 5913163248634691664
+      type: {class: AsyncActionsSequence, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _actions:
+        - rid: 5913163248634691666
+        - rid: 5913163248634691665
+        - rid: 5913163248634691668
+    - rid: 5913163248634691665
+      type: {class: ReceiveItemAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _viewPrefab: {fileID: 932548878055239803, guid: 93882122518f4bc42871fab0c58a4ce3, type: 3}
+        _text: "\u0412\u044B \u043D\u0430\u0448\u043B\u0438 \u0431\u0443\u0431\u0435\u043D!"
+        _sprite: {fileID: 3337099246386597879, guid: d301b064656b58b49aa6db317cc3dcb6, type: 3}
+    - rid: 5913163248634691666
+      type: {class: DelayAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _delaySeconds: 1
+    - rid: 5913163248634691668
+      type: {class: SetGameStateAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _gameState: {fileID: 11400000, guid: dc15d407e2d668a44932afe49e38e10d, type: 2}

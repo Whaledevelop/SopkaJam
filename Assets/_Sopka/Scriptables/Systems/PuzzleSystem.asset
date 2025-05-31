@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab3a8aa74a944fdae61a3bc33160166, type: 3}
+  m_Name: PuzzleSystem
+  m_EditorClassIdentifier: 
+  _puzzleUIViewPrefab: {fileID: 8510858717193792926, guid: 7cbbef3df74b89b48b7969008b6a9c78, type: 3}
+  _puzzlePiecePrefab: {fileID: 0}
+  _gridSize: {x: 4, y: 4}
+  _spacing: 15
+  _pieceSize: {x: 200, y: 112}
