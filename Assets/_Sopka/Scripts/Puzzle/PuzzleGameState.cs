@@ -28,6 +28,7 @@ namespace Sopka
 
         private void OnPuzzleSolved()
         {
+            Debug.Log("Puzzle Solved");
             _diContainer.Inject(_afterPuzzleSolvedAction);
             _afterPuzzleSolvedAction.Execute();
         }

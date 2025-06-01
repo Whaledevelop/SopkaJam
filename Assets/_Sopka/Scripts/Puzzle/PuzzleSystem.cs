@@ -132,6 +132,8 @@ namespace Sopka
 
         private void CheckIfSolved()
         {
+            Debug.Log(string.Join(", ", _pieces.Select(piece => $"{piece.PieceIndex} - {piece.SpriteIndex}")));
+
             for (var i = 0; i < _pieces.Count; i++)
             {
                 var piece = _pieces[i];
@@ -140,6 +142,7 @@ namespace Sopka
                     return;
                 }
             }
+            Debug.Log("Puzzle Solved");
             _puzzleModel.OnPuzzleSolved?.Invoke();
         }
     }

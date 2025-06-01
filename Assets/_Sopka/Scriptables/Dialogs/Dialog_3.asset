@@ -36,6 +36,8 @@ MonoBehaviour:
     - rid: 5913163258940096714
     - rid: 5913163258940096716
     - rid: 5913163258940096718
+    - rid: 8136316807726760276
+    - rid: 8136316807726760278
     _edges:
     - _inputNodeGuid: 514b5a7f-92e2-4ac9-92b0-954495291cfa
       _inputPortName: Start
@@ -132,13 +134,21 @@ MonoBehaviour:
       _outputNodeGuid: 958ed015-5876-4d56-82fe-a2ad92d12cd6
       _outputPortName: "\u041C\u044B \u0442\u043E\u0447\u043D\u043E \u0447\u0442\u043E-\u0442\u043E
         \u0441\u0442\u0440\u0430\u043D\u043D\u043E\u0435 \u0441\u044A\u0435\u043B\u0438..."
-    - _inputNodeGuid: 6b4463a7-a645-443f-8976-deb26133773b
-      _inputPortName: Start
-      _outputNodeGuid: 8831409e-bcd5-4b19-b639-dfe3d5c60bf8
-      _outputPortName: Next
     - _inputNodeGuid: 90d1ec68-363a-4d3e-84c3-891d0fa8fe51
       _inputPortName: Start
       _outputNodeGuid: 6b4463a7-a645-443f-8976-deb26133773b
+      _outputPortName: Next
+    - _inputNodeGuid: b17ae7c4-64f0-4aad-8239-98451b8b1ef9
+      _inputPortName: Start
+      _outputNodeGuid: 10edd033-70ec-4495-9047-6633ef7d1971
+      _outputPortName: Next
+    - _inputNodeGuid: 6b4463a7-a645-443f-8976-deb26133773b
+      _inputPortName: Start
+      _outputNodeGuid: b17ae7c4-64f0-4aad-8239-98451b8b1ef9
+      _outputPortName: Next
+    - _inputNodeGuid: 10edd033-70ec-4495-9047-6633ef7d1971
+      _inputPortName: Start
+      _outputNodeGuid: 8831409e-bcd5-4b19-b639-dfe3d5c60bf8
       _outputPortName: Next
   _speakers:
   - {fileID: 11400000, guid: 6db3441afceb584479004891e2e5f69b, type: 2}
@@ -389,3 +399,18 @@ MonoBehaviour:
       type: {class: SetGameStateAction, ns: Sopka, asm: Assembly-CSharp}
       data:
         _gameState: {fileID: 11400000, guid: dc15d407e2d668a44932afe49e38e10d, type: 2}
+    - rid: 8136316807726760276
+      type: {class: VisualsDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 10edd033-70ec-4495-9047-6633ef7d1971
+        _data:
+          _changeBackgroundSprite: 0
+          _backgroundSprite: {fileID: 0}
+          _changeItemStatus: 1
+          _itemCode: 2
+          _itemStatus: 1
+    - rid: 8136316807726760278
+      type: {class: WaitClickItemDialogNode, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _guid: b17ae7c4-64f0-4aad-8239-98451b8b1ef9
+        _itemCode: 2

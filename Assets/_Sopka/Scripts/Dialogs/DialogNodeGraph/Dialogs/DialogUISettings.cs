@@ -20,14 +20,17 @@ namespace Whaledevelop.Dialogs
         [SerializeField]
         private float _nextLineDelay = 1.0f;
 
-        [SerializeField]
-        private float _clearOptionsDelay = 0.0f;
-
         [SerializeField] private SpeakerSettings _narratorSettings;
         
         // TODO костыли уже пошли
         [SerializeReference] private IAction _hideSnakeAction;
 
+        [SerializeReference] private IAction _hideFishAction;
+
+        [SerializeReference] private IAction _hideBubenAction;
+        
+        [SerializeReference] private IAction _hideTreeAction;
+        
         public DialogView DialogView => _dialogView;
 
         public float TextAppendInterval => _textAppendInterval;
@@ -36,10 +39,14 @@ namespace Whaledevelop.Dialogs
 
         public float NextLineDelay => _nextLineDelay;
 
-        public float ClearOptionsDelay => _clearOptionsDelay;
-
         public SpeakerSettings NarratorSettings => _narratorSettings;
 
         public IAction HideSnakeAction => _hideSnakeAction;
+
+        public IAction HideFishAction => _hideFishAction;
+
+        public IAction HideBubenAction => _hideBubenAction;
+
+        public IAction HideTreeAction => _hideTreeAction;
     }
 }

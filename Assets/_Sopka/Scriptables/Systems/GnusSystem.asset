@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f892f0983238405f8b6de81c518bba8e, type: 3}
   m_Name: GnusSystem
   m_EditorClassIdentifier: 
-  _gnusSpeedMultiplier: 0.05
+  _gnusSpeedMultiplier: 0.2
   _gnusViewPrefab: {fileID: 4481202478603164918, guid: 5485b0179d048ba459ccb5e8b210bc00, type: 3}

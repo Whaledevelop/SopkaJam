@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Whaledevelop;
@@ -124,8 +125,17 @@ namespace Sopka
         {
             CloseHUD();
             var resourcesModel = _gameModel.ResourcesModel;
-            _mapHUDViewModel = new MapHUDViewModel(resourcesModel.TeamMembersCount, resourcesModel.SuppliesCount, resourcesModel.HungerProgress);
+            _mapHUDViewModel = new MapHUDViewModel(resourcesModel.TeamMembersCount, resourcesModel.SuppliesCount, resourcesModel.HungerProgress, OnClickExit);
             _uiService.OpenView(_mapHUDViewPrefab, _mapHUDViewModel);
+        }
+
+        private void OnClickExit()
+        {
+#if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
         }
 
         private void CloseHUD()

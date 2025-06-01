@@ -57,6 +57,8 @@ namespace Whaledevelop.Dialogs.UI
 
         [SerializeField] private SpeakerSettings _mainCharacterSettings;
 
+        [SerializeField] private GameObject _speakerTextRoot;
+
         private readonly List<IDisposable> _subscriptions = new();
 
         private CancellationTokenSource _textCancellation;
@@ -74,7 +76,7 @@ namespace Whaledevelop.Dialogs.UI
             
             DerivedModel.MainText.Subscribe(OnChangeText).AddToCollection(_subscriptions);
             DerivedModel.SpeakerName.Subscribe(OnChangeSpeakerName).AddToCollection(_subscriptions);
-            DerivedModel.SpeakerSprite.Subscribe(OnChangeSpeakerSprite).AddToCollection(_subscriptions);
+            DerivedModel.SpeakerSprite.Subscribe(ChangeSpeakerSprite).AddToCollection(_subscriptions);
             
             DerivedModel.FontStyle.Subscribe(OnChangeFontStyle).AddToCollection(_subscriptions);
             DerivedModel.Options.SubscribeChanged(OnChangeOptions).AddToCollection(_subscriptions);
@@ -113,13 +115,16 @@ namespace Whaledevelop.Dialogs.UI
         private void OnChangeSpeakerName(string speakerName)
         {
             _speakerNameLabel.text = speakerName;
+            _speakerTextRoot.SetActive(!string.IsNullOrEmpty(_speakerNameLabel.text));
         }
 
-        private void OnChangeSpeakerSprite(Sprite sprite)
+        private void ChangeSpeakerSprite(Sprite sprite)
         {
+            //Debug.Log($"OnChangeSpeakerSprite {sprite}");
             if (sprite == null)
             {
                 _speakerSpritesRoot.SetActive(false);
+                
             }
             else
             {
@@ -213,8 +218,13 @@ namespace Whaledevelop.Dialogs.UI
                 _textRootGameObject.SetActive(true);
                 _narratorTextRoot.SetActive(false);
             }
-            // OnChangeSpeakerSprite(_mainCharacterSettings.Icon);
-            // _speakerNameLabel.text = _mainCharacterSettings.GetNameText();
+
+            if (DerivedModel.Options.Count > 0)
+            {
+                DerivedModel.SpeakerSprite.Value = _mainCharacterSettings.Icon;
+                DerivedModel.SpeakerName.Value = _mainCharacterSettings.GetNameText();
+            }
+
             // Debug.Log($"On change options {_speakerImage.sprite}");
             foreach (var (optionText, index) in DerivedModel.Options.Select((x, i) => (x, i)))
             {

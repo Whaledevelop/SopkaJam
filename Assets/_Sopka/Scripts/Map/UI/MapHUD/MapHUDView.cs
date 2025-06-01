@@ -39,6 +39,9 @@ namespace Sopka
         [SerializeField]
         private float _changeTextDuration = 1f;
 
+        [SerializeField]
+        private Button _exitButton;
+        
         private int _lastTeamMembers = -1;
         private int _lastSupplies = -1;
 
@@ -67,6 +70,13 @@ namespace Sopka
             }).AddToCollection(_subscriptions);
 
             DerivedModel.HungerProgress.Subscribe(x => _hungerProgressImage.fillAmount = x).AddToCollection(_subscriptions);
+            
+            _exitButton.onClick.AddListener(OnClickExit);
+        }
+
+        private void OnClickExit()
+        {
+            DerivedModel.OnClickExit?.Invoke();
         }
 
         private void AnimateCountChange(

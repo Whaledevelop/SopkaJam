@@ -79,10 +79,27 @@ namespace Whaledevelop.Dialogs
             {
                 _dialogViewModel.ItemsStatuses[itemCode] = false;
                 
-                if (itemCode == ItemCode.Snake)
+                switch (itemCode)
                 {
-                    _diContainer.Inject(_uISettings.HideSnakeAction);
-                    _uISettings.HideSnakeAction.Execute();
+                    case ItemCode.Snake:
+                        _diContainer.Inject(_uISettings.HideSnakeAction);
+                        _uISettings.HideSnakeAction.Execute();
+                        break;
+                    case ItemCode.Fish:
+                        _diContainer.Inject(_uISettings.HideFishAction);
+                        _uISettings.HideFishAction.Execute();
+                        break;
+                    case ItemCode.Tree:
+                        _diContainer.Inject(_uISettings.HideTreeAction);
+                        _uISettings.HideTreeAction.Execute();
+                        break;
+                    case ItemCode.Buben:
+                        _diContainer.Inject(_uISettings.HideBubenAction);
+                        _uISettings.HideBubenAction.Execute();
+                        
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(itemCode), itemCode, null);
                 }
             }
         }
@@ -100,7 +117,7 @@ namespace Whaledevelop.Dialogs
             if (_currentNode is BranchingDialogNode)
             {
                 OnChooseOption?.Invoke(optionIndex);
-                UniTaskUtility.ExecuteAfterSeconds(_uISettings.ClearOptionsDelay, _dialogViewModel.Options.Clear, CancellationToken.None);
+                _dialogViewModel.Options.Clear();
             }
         }
         

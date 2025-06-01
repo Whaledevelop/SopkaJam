@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28025a7d355f4f97a98e4c988bfae973, type: 3}
   m_Name: MapMovementSystem
   m_EditorClassIdentifier: 
-  _defaultSpeed: 2.5
+  _defaultSpeed: 1
   _pathType: 1
   _ease: 1

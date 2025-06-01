@@ -35,6 +35,8 @@ MonoBehaviour:
   - rid: 5913163258940096713
   - rid: 5913163258940096715
   - rid: 5913163258940096717
+  - rid: 8136316807726760275
+  - rid: 8136316807726760277
   _edges:
   - _inputNodeGuid: 514b5a7f-92e2-4ac9-92b0-954495291cfa
     _inputPortName: Start
@@ -131,13 +133,21 @@ MonoBehaviour:
     _outputNodeGuid: 958ed015-5876-4d56-82fe-a2ad92d12cd6
     _outputPortName: "\u041C\u044B \u0442\u043E\u0447\u043D\u043E \u0447\u0442\u043E-\u0442\u043E
       \u0441\u0442\u0440\u0430\u043D\u043D\u043E\u0435 \u0441\u044A\u0435\u043B\u0438..."
-  - _inputNodeGuid: 6b4463a7-a645-443f-8976-deb26133773b
-    _inputPortName: Start
-    _outputNodeGuid: 8831409e-bcd5-4b19-b639-dfe3d5c60bf8
-    _outputPortName: Next
   - _inputNodeGuid: 90d1ec68-363a-4d3e-84c3-891d0fa8fe51
     _inputPortName: Start
     _outputNodeGuid: 6b4463a7-a645-443f-8976-deb26133773b
+    _outputPortName: Next
+  - _inputNodeGuid: b17ae7c4-64f0-4aad-8239-98451b8b1ef9
+    _inputPortName: Start
+    _outputNodeGuid: 10edd033-70ec-4495-9047-6633ef7d1971
+    _outputPortName: Next
+  - _inputNodeGuid: 6b4463a7-a645-443f-8976-deb26133773b
+    _inputPortName: Start
+    _outputNodeGuid: b17ae7c4-64f0-4aad-8239-98451b8b1ef9
+    _outputPortName: Next
+  - _inputNodeGuid: 10edd033-70ec-4495-9047-6633ef7d1971
+    _inputPortName: Start
+    _outputNodeGuid: 8831409e-bcd5-4b19-b639-dfe3d5c60bf8
     _outputPortName: Next
   references:
     version: 2
@@ -162,8 +172,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: 765.3957
-          y: 1316.6472
+          x: 1076.3958
+          y: 1326.6473
           width: 400
           height: 150
         _value:
@@ -587,8 +597,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: 366.38974
-          y: 1302.9545
+          x: 675.3898
+          y: 1306.9546
           width: 400
           height: 150
         _value:
@@ -607,3 +617,40 @@ MonoBehaviour:
             \u043F\u0440\u044B\u0433\u0430\u0442\u044C \u0432 \u0432\u043E\u0434\u0443!
             \u0414\u0435\u0440\u0435\u0432\u043E \u043D\u0430\u043C \u043D\u0438\u043A\u0430\u043A
             \u043D\u0435 \u043E\u043F\u043B\u044B\u0442\u044C"
+    - rid: 8136316807726760275
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 145.65817
+          y: 1326.7002
+          width: 400
+          height: 150
+        _value:
+          rid: 8136316807726760276
+    - rid: 8136316807726760276
+      type: {class: VisualsDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 10edd033-70ec-4495-9047-6633ef7d1971
+        _data:
+          _changeBackgroundSprite: 0
+          _backgroundSprite: {fileID: 0}
+          _changeItemStatus: 1
+          _itemCode: 2
+          _itemStatus: 1
+    - rid: 8136316807726760277
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 344.98752
+          y: 1326.9159
+          width: 400
+          height: 150
+        _value:
+          rid: 8136316807726760278
+    - rid: 8136316807726760278
+      type: {class: WaitClickItemDialogNode, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _guid: b17ae7c4-64f0-4aad-8239-98451b8b1ef9
+        _itemCode: 2

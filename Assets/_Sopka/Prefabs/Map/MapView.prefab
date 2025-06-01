@@ -1255,8 +1255,6 @@ MonoBehaviour:
       _value: {fileID: 3648846614914200272}
     - _key: 8
       _value: {fileID: 7424792386126793835}
-    - _key: 9
-      _value: {fileID: 2616838508826382483}
   _mapPathsViews:
     _entries:
     - _key: 0
@@ -1281,6 +1279,8 @@ MonoBehaviour:
     _entries:
     - _key: 2
       _value: {fileID: 8137747459653408006}
+    - _key: 4
+      _value: {fileID: 275904362653858106}
 --- !u!1 &2294062047295710986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1585,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4959993291038593511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3309132446404401716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8198901065358634309}
+  - component: {fileID: 275904362653858106}
+  m_Layer: 0
+  m_Name: Gnus_path_5_6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8198901065358634309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3309132446404401716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2653342747667186658}
+  m_Father: {fileID: 413082623809979624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &275904362653858106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3309132446404401716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa96d78bbd044d8eb080cfa0a2f62c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gnusPoints:
+  - {fileID: 2653342747667186658}
 --- !u!1 &3555259094747868405
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,6 +4786,37 @@ MonoBehaviour:
   _pathLineSettings: {fileID: 11400000, guid: 75654d9473e45324cb6069839da40bfd, type: 2}
   _drawGizmos: 1
   _generatedPointsCount: 5
+--- !u!1 &7225262719388662817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2653342747667186658}
+  m_Layer: 0
+  m_Name: Gnus_path_5_6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2653342747667186658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225262719388662817}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.5473541, w: 0.8369011}
+  m_LocalPosition: {x: -1.33, y: 0.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8198901065358634309}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -66.371}
 --- !u!1 &7340156912126984741
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,5 +6214,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6593270708367326362}
+  - {fileID: 8198901065358634309}
   m_Father: {fileID: 4294116398372154854}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
