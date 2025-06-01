@@ -43,8 +43,11 @@ namespace Sopka
                 Debug.LogError($"Map Location View {_startLocation} not found");
                 return UniTask.CompletedTask;
             }
-            _gameModel.MapModel.MapPlayerView = Instantiate(_mapPlayerViewPrefab, mapLocationView.PlayerRoot);
+            var mapPlayerView = _gameModel.MapModel.MapPlayerView = Instantiate(_mapPlayerViewPrefab, mapView.transform);
 
+            mapPlayerView.transform.position = mapLocationView.transform.position;
+            mapPlayerView.transform.rotation = mapLocationView.transform.rotation;
+            
             _gameModel.MapModel.CurrentLocation = new ReactiveValue<MapLocationCode>(_startLocation);
 
             foreach (var (code, view) in _gameModel.MapModel.MapView.MapLocationViews)
@@ -69,14 +72,27 @@ namespace Sopka
 
         protected override UniTask OnReleaseAsync(CancellationToken cancellationToken)
         {
-            _gameModel.MapModel.OpenedLocations.Clear();
-            _gameModel.MapModel.OpenedPaths.Clear();
-            _gameModel.MapModel.CurrentLocation = null;
-            
-            Destroy(_gameModel.MapModel.MapView.gameObject);
-            Destroy(_gameModel.MapModel.MapPlayerView.gameObject);
-            _gameModel.MapModel.MapView = null;
-            _gameModel.MapModel.MapPlayerView = null;
+            if (_gameModel.MapModel != null)
+            {
+                _gameModel.MapModel.OpenedLocations.Clear();
+                _gameModel.MapModel.OpenedPaths.Clear();
+                _gameModel.MapModel.CurrentLocation = null;
+
+                if (_gameModel.MapModel.MapView != null)
+                {                
+                    Destroy(_gameModel.MapModel.MapView.gameObject);
+                    _gameModel.MapModel.MapView = null;
+                }
+
+                if (_gameModel.MapModel.MapPlayerView != null)
+                {
+                    Destroy(_gameModel.MapModel.MapPlayerView.gameObject);
+ 
+                    _gameModel.MapModel.MapPlayerView = null;
+                }
+                
+            }
+
             CloseHUD();
             return UniTask.CompletedTask;
         }
@@ -88,7 +104,7 @@ namespace Sopka
             _gameModel.MapModel.MapPlayerView.gameObject.SetActive(true);
             var openedLocations = _gameModel.MapModel.OpenedLocations;
             
-            Debug.Log($"Enable Map {openedLocations.Count}");
+            // Debug.Log($"Enable Map {openedLocations.Count}");
             foreach (var (code, view) in _gameModel.MapModel.MapView.MapLocationViews)
             {
                 view.Renderer.enabled = openedLocations.Contains(code);
@@ -122,17 +138,27 @@ namespace Sopka
 
         public override UniTask DisableAsync(CancellationToken cancellationToken)
         {
-            _gameModel.MapModel.MapView.gameObject.SetActive(false);
-            _gameModel.MapModel.MapPlayerView.gameObject.SetActive(false);
-            
-            foreach (var (code, view) in _gameModel.MapModel.MapView.MapLocationViews)
+            if (_gameModel.MapModel != null)
             {
-                view.Renderer.enabled = false;
+                if (_gameModel.MapModel.MapView != null)
+                {
+                    _gameModel.MapModel.MapView.gameObject.SetActive(false);
+                    foreach (var (code, view) in _gameModel.MapModel.MapView.MapLocationViews)
+                    {
+                        view.Renderer.enabled = false;
+                    }
+                    foreach (var (code, view) in _gameModel.MapModel.MapView.MapPathsViews)
+                    {
+                        view.LineRenderer.enabled = false;
+                    }
+                }
+
+                if (_gameModel.MapModel.MapPlayerView != null)
+                {
+                    _gameModel.MapModel.MapPlayerView.gameObject.SetActive(false);
+                }
             }
-            foreach (var (code, view) in _gameModel.MapModel.MapView.MapPathsViews)
-            {
-                view.LineRenderer.enabled = false;
-            }
+
 
             CloseHUD();
             return UniTask.CompletedTask;

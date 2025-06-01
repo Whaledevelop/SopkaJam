@@ -14,6 +14,8 @@ namespace Sopka.UI.MapPopup
         [SerializeField] private TextMeshProUGUI _text;
 
         [SerializeField] private Button[] _buttons;
+
+        [SerializeField] private TextMeshProUGUI[] _buttonsTexts;
         
         private CancellationTokenSource _cancellationTokenSource;
         
@@ -34,6 +36,11 @@ namespace Sopka.UI.MapPopup
             foreach (var button in _buttons)
             {
                 button.onClick.AddListener(OnClick);
+            }
+
+            foreach (var buttonText in _buttonsTexts)
+            {
+                buttonText.text = DerivedModel.ButtonText;
             }
         }
 

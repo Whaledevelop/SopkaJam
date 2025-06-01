@@ -2,6 +2,7 @@
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -27,15 +28,11 @@ namespace Sopka
         [BoxGroup("LineRenderer")]
         [SerializeField]
         private LineRenderer _lineRenderer;
-
+        
         [BoxGroup("LineRenderer")]
-        [SerializeField]
-        private Color _lineColor = Color.yellow;
-
-        [BoxGroup("LineRenderer")]
-        [SerializeField]
-        private float _lineWidth = 0.1f;
-
+        [SerializeField] 
+        private PathLineSettings _pathLineSettings;
+        
         [BoxGroup("Gizmos")]
         [SerializeField]
         private bool _drawGizmos = true;
@@ -54,7 +51,9 @@ namespace Sopka
 
         private void OnValidate()
         {
+#if UNITY_EDITOR
             UpdateLineRenderer();
+            #endif
         }
 
 #if UNITY_EDITOR
@@ -65,7 +64,7 @@ namespace Sopka
                 return;
             }
 
-            Handles.color = _lineColor;
+            Handles.color = _pathLineSettings.LineColor;
 
             for (int i = 0; i < _waypoints.Length - 1; i++)
             {
@@ -170,9 +169,10 @@ namespace Sopka
             }
             _lineRenderer.positionCount = _waypoints.Length;
             _lineRenderer.useWorldSpace = true;
-            _lineRenderer.widthMultiplier = _lineWidth;
-            _lineRenderer.startColor = _lineColor;
-            _lineRenderer.endColor = _lineColor;
+            _lineRenderer.widthMultiplier = _pathLineSettings.LineWidth;
+            _lineRenderer.startColor = _pathLineSettings.LineColor;
+            _lineRenderer.endColor = _pathLineSettings.LineColor;
+            _lineRenderer.material = _pathLineSettings.LineMaterial;
             for (int i = 0; i < _waypoints.Length; i++)
             {
                 if (_waypoints[i] != null)
@@ -182,6 +182,49 @@ namespace Sopka
             }
 
         }
+        
+        [BoxGroup("Generation")]
+        [Button("Clear Waypoints")]
+        private void ClearWaypoints()
+        {
+            if (_waypoints == null || _waypoints.Length == 0)
+            {
+                return;
+            }
+
+            for (int i = 0; i < _waypoints.Length; i++)
+            {
+                var point = _waypoints[i];
+                if (point == null)
+                {
+                    continue;
+                }
+
+                if (point.gameObject.name.Contains("Waypoint"))
+                {
+#if UNITY_EDITOR
+                    if (!EditorApplication.isPlaying)
+                    {
+                        Object.DestroyImmediate(point.gameObject);
+                    }
+                    else
+#endif
+                    {
+                        Object.Destroy(point.gameObject);
+                    }
+                }
+            }
+
+            _waypoints = new Transform[0];
+
+            if (_lineRenderer != null)
+            {
+                _lineRenderer.positionCount = 0;
+            }
+
+            EditorUtility.SetDirty(this);
+        }
+
 
 #endif
     }

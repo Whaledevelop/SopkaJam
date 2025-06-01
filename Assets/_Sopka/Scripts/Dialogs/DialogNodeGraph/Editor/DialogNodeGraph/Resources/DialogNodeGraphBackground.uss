@@ -47,8 +47,12 @@ GridBackground {
     background-color: darkred;
 }
 
-#VisualSettingsDialogNode #title {
+#VisualsDialogNode #title {
     background-color: mediumpurple;
+}
+
+#WaitClickItemDialogNode #title {
+    background-color: aqua;
 }
 
 #BranchingDialogNode #title {

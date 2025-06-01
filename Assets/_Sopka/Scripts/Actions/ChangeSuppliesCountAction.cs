@@ -13,7 +13,7 @@ namespace Sopka
         
         public void Execute()
         {
-            _gameModel.ResourcesModel.SuppliesCount.Value += _changeCount;
+            _gameModel.ResourcesModel.SuppliesCount.Value = Mathf.Clamp(_gameModel.ResourcesModel.SuppliesCount.Value + _changeCount, 0, int.MaxValue);
         }
     }
 }

@@ -12,13 +12,16 @@ namespace Sopka.UI.MapPopup
         public bool AnimatedText;
 
         public float AnimationInterval;
+        
+        public string ButtonText;
 
-        public MapPopupViewModel(string text, Action onClick, bool animatedText, float animationInterval)
+        public MapPopupViewModel(string text, Action onClick, bool animatedText, float animationInterval, string buttonText = "Продолжить")
         {
             Text = text;
             OnClick = onClick;
             AnimatedText = animatedText;
             AnimationInterval = animationInterval;
+            ButtonText = buttonText;
         }
     }
 }

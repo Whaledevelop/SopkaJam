@@ -38,9 +38,9 @@ MonoBehaviour:
       _outputPortName: Next
   _speakers:
   - {fileID: 11400000, guid: 6db3441afceb584479004891e2e5f69b, type: 2}
-  _startBackground: {fileID: -4039110922585180417, guid: cad39dba3672db34aabd3b8db405ad73, type: 3}
+  _startBackground: {fileID: 21300000, guid: 91eafcb03aee3d44989ae912e8b51558, type: 3}
   _afterDialogAction:
-    rid: 5913163224810520664
+    rid: 5913163258940096724
   references:
     version: 2
     RefIds:
@@ -54,7 +54,7 @@ MonoBehaviour:
         _guid: 91d19507-9140-41ca-a156-27cf7c305142
         _data:
           _speakerId: Narrator
-          _text: "24 \u0438\u044E\u043D\u044F 1908 \u0433\u043E\u0434\u0430 \u043D\u0430\u0448
+          _text: "\"24 \u0438\u044E\u043D\u044F 1908 \u0433\u043E\u0434\u0430 \u043D\u0430\u0448
             \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u043E\u0442\u0440\u044F\u0434
             \u0442\u0440\u043E\u043D\u0443\u043B\u0441\u044F \u0432 \u043F\u0443\u0442\u044C\u2026 "
     - rid: 5913163213818298496
@@ -78,13 +78,16 @@ MonoBehaviour:
             \u0444\u0430\u043D\u0437\u0443. \u0418 \u043D\u0435 \u0431\u044B\u043B\u043E
             \u0440\u044F\u0434\u043E\u043C \u0441 \u043D\u0430\u043C\u0438 \u043C\u0435\u0441\u0442\u043D\u044B\u0445,
             \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0440\u0435\u0434\u0443\u043F\u0440\u0435\u0434\u0438\u043B\u0438
-            \u0431\u044B \u043D\u0430\u0441\u2026"
+            \u0431\u044B \u043D\u0430\u0441\u2026\"\n\u0418\u0437 \u0434\u043D\u0435\u0432\u043D\u0438\u043A\u0430
+            \u041A\u0443\u0437\u043D\u0435\u0446\u043E\u0432\u0430\n"
     - rid: 5913163213818298500
       type: {class: EndDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
       data:
         _guid: 9d07ed85-a927-48a6-8ebb-3635fbea3d78
         _finishBranchId: 
-    - rid: 5913163224810520664
-      type: {class: SetGameStateAction, ns: Sopka, asm: Assembly-CSharp}
+    - rid: 5913163258940096724
+      type: {class: StartDialogIAsyncAction, ns: Sopka, asm: Assembly-CSharp}
       data:
-        _gameState: {fileID: 11400000, guid: dc15d407e2d668a44932afe49e38e10d, type: 2}
+        _dialogSettings: {fileID: 11400000, guid: 100a6450afd76114f8655c8690cace36, type: 2}
+        _dialogGameState: {fileID: 11400000, guid: 1dc8f2cdef6899d4ca28f5960d99eab7, type: 2}
+        _notStartIfAlreadyProcessed: 1

@@ -14,6 +14,7 @@ namespace Sopka
         
         public override void InstallBindings()
         {
+            Debug.Log("GameModelInstaller InstallBindings");
             var gameModel = new GameModel(_modelStartSettings);
             Container.BindToInterface<IGameModel>(gameModel);
         }

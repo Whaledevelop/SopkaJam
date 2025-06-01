@@ -12,13 +12,15 @@ namespace Sopka
     [Serializable]
     public class ShowPopupAsyncAction : AsyncAction
     {
+        [SerializeField] private MapPopupView _mapPopupViewPrefab;
+        
         [SerializeField] private string _text;
         
-        [SerializeField] private MapPopupView _mapPopupViewPrefab;
-
         [SerializeField] private bool _animatedText = true;
 
         [SerializeField] private float _appendTextInterval = 0.05f;
+
+        [SerializeField] private string _buttonText = "Продолжить";
         
         [Inject] private IUIService _uiService;
         
@@ -26,11 +28,17 @@ namespace Sopka
 
         private bool _popupClosed;
         
-        public override UniTask ExecuteAsync(CancellationToken cancellationToken = default)
+        public override async UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {
-            _mapPopupViewModel = new MapPopupViewModel(_text, OnClick, _animatedText, _appendTextInterval);
+            if (_uiService.TryGetModel<MapPopupViewModel>(out var model))
+            {
+                _uiService.CloseView(model);
+                await UniTask.WaitForSeconds(0.1f, cancellationToken: cancellationToken);
+            }
+            _popupClosed = false;
+            _mapPopupViewModel = new MapPopupViewModel(_text, OnClick, _animatedText, _appendTextInterval, _buttonText);
             _uiService.OpenView(_mapPopupViewPrefab, _mapPopupViewModel);
-            return UniTask.WaitUntil(() => _popupClosed, cancellationToken: cancellationToken);
+            await UniTask.WaitUntil(() => _popupClosed, cancellationToken: cancellationToken);
         }
 
         private void OnClick()

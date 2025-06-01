@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using Whaledevelop.NodeGraph;
 using Whaledevelop.NodeGraph.Dialogs;
@@ -27,6 +28,8 @@ namespace Whaledevelop.Dialogs
             set => _data.SpeakerId = value;
 #endif
         }
+
+        // public FontStyles FontStyle => _data.FontStyle;
 
         [NodeProperty("Next", NodeDirection.Output)]
         public DialogNode NextNode { get; set; }

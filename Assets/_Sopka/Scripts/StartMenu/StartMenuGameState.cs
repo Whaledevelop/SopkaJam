@@ -44,6 +44,7 @@ namespace Sopka
             {
                 _uiService.CloseView(_startMenuViewModel);
             }
+            _startMenuViewModel = null;
             return UniTask.CompletedTask;
         }
 

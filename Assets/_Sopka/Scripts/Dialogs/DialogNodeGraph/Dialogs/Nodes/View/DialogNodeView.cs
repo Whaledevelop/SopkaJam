@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 using Whaledevelop.Dialogs;
 using Whaledevelop.NodeGraph;
 
+#if UNITY_EDITOR
 namespace Whaledevelop.DialogNodeGraph
 {
     [NodeEditor(typeof(DialogNode))]
@@ -167,3 +168,5 @@ namespace Whaledevelop.DialogNodeGraph
         #endregion
     }
 }
+
+#endif

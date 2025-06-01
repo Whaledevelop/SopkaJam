@@ -32,6 +32,8 @@ namespace Sopka
 
             _gameModel.MapModel.OpenedPaths.SubscribeChanged(OnPathsChanged).AddToCollection(_subscriptions);
             
+            _gameModel.MapModel.OpenedLocations.SubscribeChanged(OnLocationsChanged).AddToCollection(_subscriptions);
+            
             return base.OnInitializeAsync(cancellationToken);
         }
 
@@ -41,6 +43,15 @@ namespace Sopka
             foreach (var (code, view) in _gameModel.MapModel.MapView.MapPathsViews)
             {
                 view.LineRenderer.enabled = openedPaths.Contains(code);
+            }
+        }
+
+        private void OnLocationsChanged()
+        {
+            var openedLocations = _gameModel.MapModel.OpenedLocations;
+            foreach (var (code, view) in _gameModel.MapModel.MapView.MapLocationViews)
+            {
+                view.Renderer.enabled = openedLocations.Contains(code);
             }
         }
         

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be906053f214d639727e9af03229723, type: 3}
   m_Name: ModelStartSettings
   m_EditorClassIdentifier: 
-  _resources:
+  _resourcesModel:
     _teamMembers: 10
     _supplies: 10
     _hungerProgress: 1
     _hungerActive: 1
-    _hungerDefaultSpeed: 0.5
+    _hungerDefaultSpeed: 0.2

@@ -18,16 +18,20 @@ namespace Sopka
         private TextMeshProUGUI _itemText;
 
         [SerializeField]
-        private Button _continueButton;
+        private Button[] _buttons;
 
         private readonly List<IDisposable> _subscriptions = new List<IDisposable>();
             
         public override void Initialize()
         {
-            _continueButton.onClick.AddListener(() =>
+            foreach (var button in _buttons)
             {
-                DerivedModel.OnClickContinue?.Invoke();
-            });
+                button.onClick.AddListener(() =>
+                {
+                    DerivedModel.OnClickContinue?.Invoke();
+                });
+            }
+
 
             DerivedModel.ItemText.Subscribe(UpdateText).AddToCollection(_subscriptions);
             DerivedModel.ItemSprite.Subscribe(UpdateImage).AddToCollection(_subscriptions);
@@ -35,7 +39,10 @@ namespace Sopka
 
         public override void Release()
         {
-            _continueButton.onClick.RemoveAllListeners();
+            foreach (var button in _buttons)
+            {
+                button.onClick.RemoveAllListeners();
+            }
             _subscriptions.Dispose();
         }
 

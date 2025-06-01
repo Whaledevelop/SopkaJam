@@ -1,5 +1,6 @@
 using System;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 
 namespace Whaledevelop.Dialogs
@@ -12,7 +13,6 @@ namespace Whaledevelop.Dialogs
             [SerializeField]
             [PropertyOrder(1)]
             [ReadOnly]
-            [InfoBox("Must be set from graph", nameof(IsSpeakerSet))]
             [Required]
             private string _speakerId;
 
@@ -21,9 +21,12 @@ namespace Whaledevelop.Dialogs
             [Required]
             [Title("Text", bold: false)]
             [HideLabel]
-            [MultiLineProperty(2)]
+            [MultiLineProperty(5)]
             private string _text;
 
+            // [SerializeField]
+            // private FontStyles _style = FontStyles.Normal;
+            
             public string Text
             {
                 get => _text;
@@ -64,7 +67,11 @@ namespace Whaledevelop.Dialogs
                 get => _dialogSettings;
                 set => _dialogSettings = value;
             }
+
+
 #endif
+            // public FontStyles FontStyle => _style;
+            
         }
     }
 }

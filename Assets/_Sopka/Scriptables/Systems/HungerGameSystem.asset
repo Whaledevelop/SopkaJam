@@ -12,3 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b16dfced54e249ec91792a995b4ba2a8, type: 3}
   m_Name: HungerGameSystem
   m_EditorClassIdentifier: 
+  _deathAction:
+    rid: 8136316807726760029
+  references:
+    version: 2
+    RefIds:
+    - rid: 8136316807726760029
+      type: {class: AsyncActionsSequence, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _actions:
+        - rid: 8136316807726760030
+        - rid: 8136316807726760032
+    - rid: 8136316807726760030
+      type: {class: ShowPopupAsyncAction, ns: Sopka, asm: Assembly-CSharp}
+      data:
+        _mapPopupViewPrefab: {fileID: 1339839840007473619, guid: d914b25aa63f90f498ea0244165c9655, type: 3}
+        _text: "\u0423 \u0432\u0430\u0441 \u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C
+          \u043F\u0440\u0438\u043F\u0430\u0441\u044B \u0438 \u043F\u043E\u0433\u0438\u0431\u043B\u0438
+          \u0432\u0441\u0435 \u0447\u043B\u0435\u043D\u044B \u043A\u043E\u043C\u0430\u043D\u0434\u044B!
+          \u0412\u044B \u043D\u0435 \u0432 \u0441\u0438\u043B\u0430\u0445 \u043F\u0440\u043E\u0434\u043B\u0436\u0430\u0442\u044C
+          \u044D\u043A\u0441\u043F\u0435\u0434\u0438\u0446\u0438\u044E"
+        _animatedText: 1
+        _appendTextInterval: 0.05
+        _buttonText: "\u041F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u044C"
+    - rid: 8136316807726760032
+      type: {class: RestartAction, ns: Sopka, asm: Assembly-CSharp}
+      data: 

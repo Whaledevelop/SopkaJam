@@ -4,22 +4,21 @@ using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Sopka;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Serialization;
 using Whaledevelop.Reactive;
 using Whaledevelop.UI;
+using Whaledevelop.Utility;
 
 namespace Whaledevelop.Dialogs.UI
 {
     public class DialogView : UIView<DialogViewModel>
     {
         [SerializeField]
-        private Image[] _speakersImages;
-
-        [SerializeField]
-        private Image _rightImage;
+        private Image _speakerImage;
 
         [SerializeField] 
         private GameObject _textRootGameObject;
@@ -27,21 +26,37 @@ namespace Whaledevelop.Dialogs.UI
         [SerializeField]
         private TextMeshProUGUI _textLabel;
 
+        [SerializeField] private TextMeshProUGUI _narratorLabel;
+        
         [SerializeField]
-        private RectTransform _optionsContainer;
+        private TextMeshProUGUI _speakerNameLabel;
 
         [SerializeField]
-        private Button _optionButtonPrefab;
+        private Button[] _optionsButtons;
         
-        [FormerlySerializedAs("_nextButtonPrefab")] [SerializeField]
+        [SerializeField]
+        private TextMeshProUGUI[] _optionsTexts;
+        
+        [SerializeField]
         private Button _nextButton;
         
         [SerializeField]
         private Image _backgroundImage;
 
-        [SerializeField] private Button _skipDialogButton;
+        [SerializeField] 
+        private Button _skipDialogButton;
+        
+        [SerializeField]
+        private SerializableDictionary<ItemCode, ItemView> _itemsViews;
 
-        private readonly List<Button> _optionButtons = new();
+        [SerializeField] private GameObject _speakerSpritesRoot;
+
+        [SerializeField] private GameObject _narratorTextRoot;
+
+        [SerializeField] private Button _narratorNext;
+
+        [SerializeField] private SpeakerSettings _mainCharacterSettings;
+
         private readonly List<IDisposable> _subscriptions = new();
 
         private CancellationTokenSource _textCancellation;
@@ -49,27 +64,109 @@ namespace Whaledevelop.Dialogs.UI
         public override void Initialize()
         {
             ClearOptions();
-
-            for (var i = 0; i < _speakersImages.Length; i++)
-            {
-                if (DerivedModel.SpeakerSprites.Length > i && DerivedModel.SpeakerSprites[i] != null)
-                {
-                    _speakersImages[i].sprite = DerivedModel.SpeakerSprites[i];
-                    _speakersImages[i].enabled = true;
-                }
-                else
-                {
-                    _speakersImages[i].enabled = false;
-                }
-            }
-
+            
             _skipDialogButton.onClick.AddListener(OnSkip); // для тестов
             
             _nextButton.onClick.AddListener(OnClickNextButton);
-            _nextButton.gameObject.SetActive(false);
-            DerivedModel.DialogLine.Subscribe(OnChangeLine).AddToCollection(_subscriptions);
+            _narratorNext.onClick.AddListener(OnClickNextButton);
+            
+            SetNextButtonEnabled(true);
+            
+            DerivedModel.MainText.Subscribe(OnChangeText).AddToCollection(_subscriptions);
+            DerivedModel.SpeakerName.Subscribe(OnChangeSpeakerName).AddToCollection(_subscriptions);
+            DerivedModel.SpeakerSprite.Subscribe(OnChangeSpeakerSprite).AddToCollection(_subscriptions);
+            
+            DerivedModel.FontStyle.Subscribe(OnChangeFontStyle).AddToCollection(_subscriptions);
             DerivedModel.Options.SubscribeChanged(OnChangeOptions).AddToCollection(_subscriptions);
             DerivedModel.BackgroundSprite.Subscribe(OnSetBackgroundSprite).AddToCollection(_subscriptions);
+        
+            DerivedModel.ItemsStatuses.SubscribeChanged(OnUpdateStatuses).AddToCollection(_subscriptions);
+
+            foreach (var (itemCode, itemView) in _itemsViews)
+            {
+                itemView.Button.onClick.AddListener(() => DerivedModel.OnClickItem(itemCode));
+            }
+        }
+
+        private CancellationTokenSource _statusesCts;
+
+        private void OnChangeText(string text)
+        {
+            //SetNextButtonEnabled(false);
+            _textCancellation?.Cancel();
+            _textCancellation = new CancellationTokenSource();
+
+            if (string.IsNullOrEmpty(text))
+            {
+                _textLabel.text = null;
+
+                return;
+            }
+
+            var isNarrator = string.IsNullOrEmpty(_speakerNameLabel.text);
+            _textRootGameObject.SetActive(!isNarrator);
+            _narratorTextRoot.SetActive(isNarrator);
+            ShowTextAsync(_narratorLabel, text, _textCancellation.Token).Forget();
+            ShowTextAsync(_textLabel, text, _textCancellation.Token).Forget();
+        }
+
+        private void OnChangeSpeakerName(string speakerName)
+        {
+            _speakerNameLabel.text = speakerName;
+        }
+
+        private void OnChangeSpeakerSprite(Sprite sprite)
+        {
+            if (sprite == null)
+            {
+                _speakerSpritesRoot.SetActive(false);
+            }
+            else
+            {
+                _speakerImage.sprite = sprite;
+                _speakerSpritesRoot.SetActive(true);
+            }
+        }
+
+        private void OnUpdateStatuses()
+        {
+            _statusesCts?.Cancel();
+            _statusesCts = new CancellationTokenSource();
+
+            foreach (var (itemCode, itemView) in _itemsViews)
+            {
+                var root = itemView.Root;
+                var canvasGroup = itemView.CanvasGroup;
+                canvasGroup.alpha = 0f;
+
+                DOTween.Kill(root);
+
+                if (DerivedModel.ItemsStatuses.TryGetValue(itemCode, out var itemStatus) && itemStatus)
+                {
+                    itemView.gameObject.SetActive(true);
+
+                    var token = _statusesCts.Token;
+
+                    canvasGroup.DOFade(1f, 0.3f).OnComplete(() =>
+                    {
+                        DOTweenUtility.LoopScale(root, token).Forget();
+                    });
+                }
+                else
+                {
+                    canvasGroup.DOFade(0f, 0.2f).OnComplete(() =>
+                    {
+                        itemView.gameObject.SetActive(false);
+                    });
+                }
+            }
+        }
+
+        
+        private void OnChangeFontStyle(FontStyles fontStyle)
+        {
+            _narratorLabel.fontStyle = fontStyle;
+            _textLabel.fontStyle = fontStyle;
         }
 
         private void OnSkip()
@@ -96,57 +193,52 @@ namespace Whaledevelop.Dialogs.UI
         {
             _backgroundImage.sprite = sprite;
         }
-
-        private void OnChangeLine((string speakerName, string phrase) line)
-        {
-            _nextButton.gameObject.SetActive(false);
-            _textCancellation?.Cancel();
-            _textCancellation = new CancellationTokenSource();
-
-            if (string.IsNullOrEmpty(line.phrase))
-            {
-                _textLabel.text = null;
-
-                return;
-            }
-
-            _textRootGameObject.SetActive(true);
-            ShowTextAsync(line.speakerName, line.phrase, _textCancellation.Token).Forget();
-        }
         
         private void OnClickNextButton()
         {
             _textCancellation?.Cancel();
             //_textCancellation?.Dispose();
-            DerivedModel.OnClickNext?.Invoke();
+            _textLabel.text = DerivedModel.MainText.Value;
+            _narratorLabel.text = DerivedModel.MainText.Value;
+            
+            UniTaskUtility.ExecuteAfterSeconds(0.2f, () => DerivedModel.OnClickNext?.Invoke(), CancellationToken.None);
         }
 
         private void OnChangeOptions()
         {
             ClearOptions();
-
+            if (_narratorTextRoot.activeSelf)
+            {
+                _textLabel.text = _narratorLabel.text;
+                _textRootGameObject.SetActive(true);
+                _narratorTextRoot.SetActive(false);
+            }
+            // OnChangeSpeakerSprite(_mainCharacterSettings.Icon);
+            // _speakerNameLabel.text = _mainCharacterSettings.GetNameText();
+            // Debug.Log($"On change options {_speakerImage.sprite}");
             foreach (var (optionText, index) in DerivedModel.Options.Select((x, i) => (x, i)))
             {
-                var button = Instantiate(_optionButtonPrefab, _optionsContainer);
-                button.GetComponentInChildren<TextMeshProUGUI>().text = optionText;
-
+                _optionsTexts[index].text = optionText;
                 var capturedIndex = index;
-                button.onClick.AddListener(() => DerivedModel.OnOptionSelected?.Invoke(capturedIndex));
-
-                _optionButtons.Add(button);
+                
+                
+                _textRootGameObject.SetActive(true);
+                _narratorTextRoot.SetActive(false);
+                _optionsButtons[index].onClick.AddListener(() => DerivedModel.OnOptionSelected?.Invoke(capturedIndex));
+                _optionsButtons[index].gameObject.SetActive(true);
             }
-            
-            _nextButton.gameObject.SetActive(false);
+
+            //SetNextButtonEnabled(false);
         }
 
         private void ClearOptions()
         {
-            foreach (var button in _optionButtons)
+            foreach (var button in _optionsButtons)
             {
-                Destroy(button.gameObject);
+                button.onClick.RemoveAllListeners();
+                button.gameObject.SetActive(false);
             }
-
-            _optionButtons.Clear();
+            
         }
 
         private void OnTextShown()
@@ -155,16 +247,27 @@ namespace Whaledevelop.Dialogs.UI
             {
                 return;
             }
-            _nextButton.gameObject.SetActive(true);
+
+            //SetNextButtonEnabled(true);
         }
 
-        private async UniTask ShowTextAsync(string speakerName, string phrase, CancellationToken cancellationToken)
+        private void SetNextButtonEnabled(bool mode)
         {
-            var speakerText = string.IsNullOrEmpty(speakerName) ? string.Empty : $"{speakerName} : ";
+            if (string.IsNullOrEmpty(_speakerNameLabel.text))
+            {
+                _narratorNext.gameObject.SetActive(mode);
+            }
+            else
+            {
+                _nextButton.gameObject.SetActive(mode);
+            }
+        }
 
-            _textLabel.text = speakerText;
+        private async UniTask ShowTextAsync(TextMeshProUGUI text, string phrase, CancellationToken cancellationToken)
+        {
+            text.text = string.Empty;
 
-            var sequence = TextAnimationUtility.BuildTypewriterSequence(_textLabel, phrase, DerivedModel.TextAppendInterval);
+            var sequence = TextAnimationUtility.BuildTypewriterSequence(text, phrase, DerivedModel.TextAppendInterval);
 
             cancellationToken.Register(() => sequence.Kill());
 

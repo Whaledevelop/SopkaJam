@@ -1,0 +1,609 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f702ede90602747b6e4572cf65f1b6, type: 3}
+  m_Name: Dialog_3
+  m_EditorClassIdentifier: 
+  _nodes:
+  - rid: 5913163258940096673
+  - rid: 5913163258940096675
+  - rid: 5913163258940096677
+  - rid: 5913163258940096679
+  - rid: 5913163258940096681
+  - rid: 5913163258940096683
+  - rid: 5913163258940096685
+  - rid: 5913163258940096687
+  - rid: 5913163258940096689
+  - rid: 5913163258940096693
+  - rid: 5913163258940096695
+  - rid: 5913163258940096697
+  - rid: 5913163258940096699
+  - rid: 5913163258940096701
+  - rid: 5913163258940096703
+  - rid: 5913163258940096705
+  - rid: 5913163258940096707
+  - rid: 5913163258940096709
+  - rid: 5913163258940096711
+  - rid: 5913163258940096713
+  - rid: 5913163258940096715
+  - rid: 5913163258940096717
+  _edges:
+  - _inputNodeGuid: 514b5a7f-92e2-4ac9-92b0-954495291cfa
+    _inputPortName: Start
+    _outputNodeGuid: ddeec929-39b5-494d-94d6-27bab55d0784
+    _outputPortName: Next
+  - _inputNodeGuid: ccfbea71-02d9-4c39-88dd-fdcf80f218fb
+    _inputPortName: Start
+    _outputNodeGuid: 514b5a7f-92e2-4ac9-92b0-954495291cfa
+    _outputPortName: Next
+  - _inputNodeGuid: 92ef9671-0bbb-4c12-8603-9e509ee5e92f
+    _inputPortName: Start
+    _outputNodeGuid: ccfbea71-02d9-4c39-88dd-fdcf80f218fb
+    _outputPortName: Next
+  - _inputNodeGuid: 34505f58-a100-453f-9127-82267aedf439
+    _inputPortName: Start
+    _outputNodeGuid: 92ef9671-0bbb-4c12-8603-9e509ee5e92f
+    _outputPortName: Next
+  - _inputNodeGuid: 94ac14f0-78da-4183-8012-0740c80e5581
+    _inputPortName: Start
+    _outputNodeGuid: 34505f58-a100-453f-9127-82267aedf439
+    _outputPortName: "\u0427\u0435\u0440\u0442\u043E\u0432 \u0434\u043E\u0436\u0434\u044C.
+      \u041A\u0430\u043A \u043D\u0430\u0437\u043B\u043E \u043D\u0430\u0447\u0430\u043B\u0441..."
+  - _inputNodeGuid: 94ac14f0-78da-4183-8012-0740c80e5581
+    _inputPortName: Start
+    _outputNodeGuid: 34505f58-a100-453f-9127-82267aedf439
+    _outputPortName: "\u0427\u0435\u0440\u0442\u043E\u0432\u0435\u043D\u044C\u043A\u0438\u0439
+      \u0434\u043E\u0436\u0434\u0438\u043A, \u043D\u043E \u043D\u0438\u0447\u0435\u0433\u043E..."
+  - _inputNodeGuid: be7d6eaa-2191-4131-a6f9-c6fbcb62ada9
+    _inputPortName: Start
+    _outputNodeGuid: 94ac14f0-78da-4183-8012-0740c80e5581
+    _outputPortName: Next
+  - _inputNodeGuid: 7784436e-dee9-4588-82be-c1c8a012fbfc
+    _inputPortName: Start
+    _outputNodeGuid: be7d6eaa-2191-4131-a6f9-c6fbcb62ada9
+    _outputPortName: Next
+  - _inputNodeGuid: 7fd5c6e9-ff38-4c3d-959f-1d23dbab766e
+    _inputPortName: Start
+    _outputNodeGuid: 7784436e-dee9-4588-82be-c1c8a012fbfc
+    _outputPortName: Next
+  - _inputNodeGuid: cae5d2da-da6a-4374-8931-88f1a271238a
+    _inputPortName: Start
+    _outputNodeGuid: 7fd5c6e9-ff38-4c3d-959f-1d23dbab766e
+    _outputPortName: "\u041D\u0430\u043A\u0430\u0440\u043A\u0430\u043B\u0438 \u0432\u044B,
+      \u0412\u043B\u0430\u0434\u0438\u043C\u0438\u0440 \u041A\u043B\u0430\u0432\u0434\u0438\u0435..."
+  - _inputNodeGuid: cae5d2da-da6a-4374-8931-88f1a271238a
+    _inputPortName: Start
+    _outputNodeGuid: 7fd5c6e9-ff38-4c3d-959f-1d23dbab766e
+    _outputPortName: "\u0416\u0435\u043D\u0449\u0438\u043D\u0430, \u043F\u043E\u043B\u0435\u0433\u0447\u0435\u2026
+      \u0432\u0430\u043C \u043D\u0443\u0436\u043D\u0430 \u043F\u043E..."
+  - _inputNodeGuid: 2672c98e-4361-4ec4-ba10-59f27cb5f461
+    _inputPortName: Start
+    _outputNodeGuid: cae5d2da-da6a-4374-8931-88f1a271238a
+    _outputPortName: Next
+  - _inputNodeGuid: cc572d37-6327-4b83-8552-44da49b193a0
+    _inputPortName: Start
+    _outputNodeGuid: 2672c98e-4361-4ec4-ba10-59f27cb5f461
+    _outputPortName: Next
+  - _inputNodeGuid: 2f59c2d3-5381-45d6-94d6-94785a8c13ee
+    _inputPortName: Start
+    _outputNodeGuid: cc572d37-6327-4b83-8552-44da49b193a0
+    _outputPortName: Next
+  - _inputNodeGuid: ba7db662-8b9d-42dd-8a7d-5502efc4723d
+    _inputPortName: Start
+    _outputNodeGuid: 2f59c2d3-5381-45d6-94d6-94785a8c13ee
+    _outputPortName: Next
+  - _inputNodeGuid: cdb2d534-a7cf-4327-8a33-b43f77a8bca8
+    _inputPortName: Start
+    _outputNodeGuid: 0f10096c-23e4-4964-be24-28778352b0e5
+    _outputPortName: Next
+  - _inputNodeGuid: 0f10096c-23e4-4964-be24-28778352b0e5
+    _inputPortName: Start
+    _outputNodeGuid: ba7db662-8b9d-42dd-8a7d-5502efc4723d
+    _outputPortName: Next
+  - _inputNodeGuid: ca8c1305-e317-498a-a1bd-2296741e4f2d
+    _inputPortName: Start
+    _outputNodeGuid: cdb2d534-a7cf-4327-8a33-b43f77a8bca8
+    _outputPortName: Next
+  - _inputNodeGuid: 7fce1048-415c-4be0-a3c8-47d900f50ca3
+    _inputPortName: Start
+    _outputNodeGuid: ca8c1305-e317-498a-a1bd-2296741e4f2d
+    _outputPortName: Next
+  - _inputNodeGuid: 958ed015-5876-4d56-82fe-a2ad92d12cd6
+    _inputPortName: Start
+    _outputNodeGuid: 7fce1048-415c-4be0-a3c8-47d900f50ca3
+    _outputPortName: Next
+  - _inputNodeGuid: 8831409e-bcd5-4b19-b639-dfe3d5c60bf8
+    _inputPortName: Start
+    _outputNodeGuid: 958ed015-5876-4d56-82fe-a2ad92d12cd6
+    _outputPortName: "\u041C\u043E\u0436\u0435\u0442 \u0432\u043E\u043E\u0431\u0449\u0435
+      \u044D\u0442\u043E\u0433\u043E \u0438 \u043D\u0435 \u0431\u044B\u043B\u043E.
+      ..."
+  - _inputNodeGuid: 8831409e-bcd5-4b19-b639-dfe3d5c60bf8
+    _inputPortName: Start
+    _outputNodeGuid: 958ed015-5876-4d56-82fe-a2ad92d12cd6
+    _outputPortName: "\u041C\u044B \u0442\u043E\u0447\u043D\u043E \u0447\u0442\u043E-\u0442\u043E
+      \u0441\u0442\u0440\u0430\u043D\u043D\u043E\u0435 \u0441\u044A\u0435\u043B\u0438..."
+  - _inputNodeGuid: 6b4463a7-a645-443f-8976-deb26133773b
+    _inputPortName: Start
+    _outputNodeGuid: 8831409e-bcd5-4b19-b639-dfe3d5c60bf8
+    _outputPortName: Next
+  - _inputNodeGuid: 90d1ec68-363a-4d3e-84c3-891d0fa8fe51
+    _inputPortName: Start
+    _outputNodeGuid: 6b4463a7-a645-443f-8976-deb26133773b
+    _outputPortName: Next
+  references:
+    version: 2
+    RefIds:
+    - rid: 5913163258940096673
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 115.29471
+          y: -96.54516
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096674
+    - rid: 5913163258940096674
+      type: {class: StartDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: ddeec929-39b5-494d-94d6-27bab55d0784
+    - rid: 5913163258940096675
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 765.3957
+          y: 1316.6472
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096676
+    - rid: 5913163258940096676
+      type: {class: EndDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 90d1ec68-363a-4d3e-84c3-891d0fa8fe51
+        _finishBranchId: 
+    - rid: 5913163258940096677
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 299.45496
+          y: -96.740036
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096678
+    - rid: 5913163258940096678
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 514b5a7f-92e2-4ac9-92b0-954495291cfa
+        _data:
+          _speakerId: Narrator
+          _text: "\u201C3 \u0430\u0432\u0433\u0443\u0441\u0442\u0430 1908 \u0433\u043E\u0434\u0430,
+            \u043F\u0440\u0435\u043E\u0434\u043E\u043B\u0435\u0432 \u0441\u043A\u0430\u043B\u044B,
+            \u043C\u044B \u0432\u044B\u0448\u043B\u0438 \u043A \u0440\u0435\u043A\u0435.
+            \u0418\u0434\u0442\u0438 \u043F\u043E \u0433\u043E\u0440\u0430\u043C
+            \u0431\u043E\u043B\u044C\u0448\u0435 \u043D\u0435\u0442 \u0441\u0438\u043B,
+            \u043F\u043E\u044D\u0442\u043E\u043C\u0443 \u0440\u0435\u0448\u0435\u043D\u043E
+            \u0441\u043F\u043B\u0430\u0432\u043B\u044F\u0442\u044C\u0441\u044F \u043F\u043E
+            \u0440\u0435\u043A\u0435. "
+    - rid: 5913163258940096679
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 633.6724
+          y: -96.875015
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096680
+    - rid: 5913163258940096680
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: ccfbea71-02d9-4c39-88dd-fdcf80f218fb
+        _data:
+          _speakerId: Narrator
+          _text: "\u041E\u0434\u043D\u0430\u043A\u043E \u043A\u0430\u043A \u0442\u043E\u043B\u044C\u043A\u043E
+            \u043C\u044B \u043F\u043E\u0433\u0440\u0443\u0437\u0438\u043B\u0438\u0441\u044C
+            \u0432 \u043B\u043E\u0434\u043A\u0443 \u0438 \u043E\u0442\u043F\u043B\u044B\u043B\u0438
+            \u043E\u0442 \u0431\u0435\u0440\u0435\u0433\u0430, \u043D\u0430\u0447\u0430\u043B\u0441\u044F
+            \u043B\u0438\u0432\u0435\u043D\u044C\u201D.\n\u0418\u0437 \u0434\u043D\u0435\u0432\u043D\u0438\u043A\u0430
+            \u041A\u0443\u0437\u043D\u0435\u0446\u043E\u0432\u0430"
+    - rid: 5913163258940096681
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 299.19748
+          y: 100.79001
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096682
+    - rid: 5913163258940096682
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 92ef9671-0bbb-4c12-8603-9e509ee5e92f
+        _data:
+          _speakerId: Arseniev
+          _text: " \u041E\u0442\u0440\u044F\u0434! \u041D\u0430\u043A\u0440\u043E\u0439\u0442\u0435
+            \u043F\u0440\u0438\u043F\u0430\u0441\u044B \u0431\u0440\u0435\u0437\u0435\u043D\u0442\u043E\u043C
+            \u0438 \u0431\u0435\u0440\u0438\u0442\u0435\u0441\u044C \u0437\u0430
+            \u0432\u0435\u0441\u043B\u0430. \u041D\u0435 \u0440\u0430\u0441\u0441\u043B\u0430\u0431\u043B\u044F\u0442\u044C\u0441\u044F!"
+    - rid: 5913163258940096683
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 674.245
+          y: 100.957504
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096684
+    - rid: 5913163258940096684
+      type: {class: BranchingDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 34505f58-a100-453f-9127-82267aedf439
+        _options:
+        - "\u0427\u0435\u0440\u0442\u043E\u0432 \u0434\u043E\u0436\u0434\u044C. \u041A\u0430\u043A
+          \u043D\u0430\u0437\u043B\u043E \u043D\u0430\u0447\u0430\u043B\u0441\u044F."
+        - "\u0427\u0435\u0440\u0442\u043E\u0432\u0435\u043D\u044C\u043A\u0438\u0439
+          \u0434\u043E\u0436\u0434\u0438\u043A, \u043D\u043E \u043D\u0438\u0447\u0435\u0433\u043E
+          \u0441 \u043D\u0438\u043C \u043D\u0435 \u0441\u0434\u0435\u043B\u0430\u0435\u0448\u044C."
+    - rid: 5913163258940096685
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 299.42004
+          y: 288.01996
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096686
+    - rid: 5913163258940096686
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 94ac14f0-78da-4183-8012-0740c80e5581
+        _data:
+          _speakerId: Arseniev
+          _text: "\u041A\u0443\u0437\u043D\u0435\u0446\u043E\u0432, \u043D\u0435
+            \u043F\u043E\u043C\u0438\u043D\u0430\u0439 \u0447\u0435\u0440\u0442\u0430.
+            \u0422\u043E\u043B\u044C\u043A\u043E \u0435\u0433\u043E \u043D\u0430\u043C
+            \u0437\u0434\u0435\u0441\u044C \u043D\u0435 \u0445\u0432\u0430\u0442\u0430\u043B\u043E."
+    - rid: 5913163258940096687
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 662.73
+          y: 287.62247
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096688
+    - rid: 5913163258940096688
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: be7d6eaa-2191-4131-a6f9-c6fbcb62ada9
+        _data:
+          _speakerId: Narrator
+          _text: "\u0412\u043E\u0437\u0434\u0443\u0445 \u043F\u0440\u043E\u0440\u0435\u0437\u0430\u0435\u0442
+            \u043C\u043E\u043B\u043D\u0438\u044F, \u043D\u043E \u043E\u043D\u0430
+            \u043D\u0435 \u0438\u0441\u0447\u0435\u0437\u0430\u0435\u0442 \u0432\u0441\u043F\u044B\u0448\u043A\u043E\u0439,
+            \u0430 \u0437\u0430\u043A\u0440\u0443\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+            \u0432 \u0448\u0430\u0440 \u0441\u043C\u0435\u0440\u0442\u043E\u043D\u043E\u0441\u043D\u043E\u0433\u043E
+            \u0441\u0432\u0435\u0442\u0430. "
+    - rid: 5913163258940096689
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 298.8
+          y: 452.65
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096690
+    - rid: 5913163258940096690
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 7784436e-dee9-4588-82be-c1c8a012fbfc
+        _data:
+          _speakerId: Narrator
+          _text: "\u0423\u0436\u0435 \u0447\u0435\u0440\u0435\u0437 \u0441\u0435\u043A\u0443\u043D\u0434\u0443
+            \u043D\u0430 \u043D\u043E\u0441\u0443 \u043B\u043E\u0434\u043A\u0438
+            \u043C\u044B \u0432\u0438\u0434\u0438\u043C \u0436\u0435\u043D\u0449\u0438\u043D\u0443.
+            \u0412 \u0435\u0435 \u0433\u043B\u0430\u0437\u0430\u0445 \u044F\u0440\u043E\u0441\u0442\u043D\u044B\u0439
+            \u043E\u0433\u043E\u043D\u044C."
+    - rid: 5913163258940096693
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 663.2425
+          y: 452.87
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096694
+    - rid: 5913163258940096694
+      type: {class: BranchingDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 7fd5c6e9-ff38-4c3d-959f-1d23dbab766e
+        _options:
+        - "\u041D\u0430\u043A\u0430\u0440\u043A\u0430\u043B\u0438 \u0432\u044B, \u0412\u043B\u0430\u0434\u0438\u043C\u0438\u0440
+          \u041A\u043B\u0430\u0432\u0434\u0438\u0435\u0432\u0438\u0447. \u041A\u0430\u043A\u043E\u0433\u043E
+          \u0434\u044C\u044F\u0432\u043E\u043B\u0430 \u043E\u043D\u0430 \u0437\u0434\u0435\u0441\u044C
+          \u043F\u043E\u044F\u0432\u0438\u043B\u0430\u0441\u044C?"
+        - "\u0416\u0435\u043D\u0449\u0438\u043D\u0430, \u043F\u043E\u043B\u0435\u0433\u0447\u0435\u2026
+          \u0432\u0430\u043C \u043D\u0443\u0436\u043D\u0430 \u043F\u043E\u043C\u043E\u0449\u044C?"
+    - rid: 5913163258940096695
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 299.395
+          y: 611.76245
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096696
+    - rid: 5913163258940096696
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: cae5d2da-da6a-4374-8931-88f1a271238a
+        _data:
+          _speakerId: Narrator
+          _text: "\u0420\u0430\u0437\u0434\u0430\u043B\u0441\u044F \u0437\u0432\u043E\u043D\u043A\u0438\u0439
+            \u043A\u0440\u0438\u043A"
+    - rid: 5913163258940096697
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 659.38245
+          y: 612.34247
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096698
+    - rid: 5913163258940096698
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 2672c98e-4361-4ec4-ba10-59f27cb5f461
+        _data:
+          _speakerId: Shamanka
+          _text: "\u041C\u043E\u043B\u0447\u0430\u0442\u044C! \u0412\u044B \u0441\u0442\u0443\u043F\u0438\u043B\u0438
+            \u043D\u0430 \u044D\u0442\u0438 \u0441\u0432\u044F\u0449\u0435\u043D\u043D\u044B\u0435,
+            \u043D\u0435\u0442\u0440\u043E\u043D\u0443\u0442\u044B\u0435 \u0437\u0435\u043C\u043B\u0438,
+            \u0432\u043E\u0448\u043B\u0438 \u0432 \u043C\u043E\u0439 \u0434\u043E\u043C
+            \u0438 \u043F\u043E\u043A\u0443\u0441\u0438\u043B\u0438\u0441\u044C \u043D\u0430
+            \u043C\u043E\u044E \u0436\u0438\u0437\u043D\u044C. "
+    - rid: 5913163258940096699
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 298.5383
+          y: 783.7302
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096700
+    - rid: 5913163258940096700
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: cc572d37-6327-4b83-8552-44da49b193a0
+        _data:
+          _speakerId: MainCharacter
+          _text: "\u041D\u0438 \u043D\u0430 \u043A\u043E\u0433\u043E \u043C\u044B
+            \u043D\u0435 \u043F\u043E\u043A\u0443\u0448\u0430\u043B\u0438\u0441\u044C\u2026"
+    - rid: 5913163258940096701
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 569.6243
+          y: 783.6065
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096702
+    - rid: 5913163258940096702
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 2f59c2d3-5381-45d6-94d6-94785a8c13ee
+        _data:
+          _speakerId: Shamanka
+          _text: "\u041C\u043E\u043B\u0438\u0442\u0435\u0441\u044C, \u0432\u0435\u0434\u044C
+            \u044F \u0442\u0430 \u0437\u043C\u0435\u044F, \u043A\u043E\u0442\u043E\u0440\u0443\u044E
+            \u0432\u044B \u043F\u044B\u0442\u0430\u043B\u0438\u0441\u044C \u0443\u0431\u0438\u0442\u044C.
+            \u0420\u0430\u0437 \u043F\u044B\u0442\u0430\u043B\u0438\u0441\u044C \u0443\u0431\u0438\u0442\u044C
+            \u043C\u0435\u043D\u044F, \u0437\u043D\u0430\u0447\u0438\u0442 \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u0435
+            \u0438 \u044D\u0442\u043E \u043C\u0435\u0441\u0442\u043E. \n"
+    - rid: 5913163258940096703
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 909.6626
+          y: 783.9812
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096704
+    - rid: 5913163258940096704
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: ba7db662-8b9d-42dd-8a7d-5502efc4723d
+        _data:
+          _speakerId: Shamanka
+          _text: "\u0420\u0430\u0441\u0442\u043E\u043F\u0447\u0438\u0442\u0435 \u0442\u0440\u0430\u0432\u0443,
+            \u0432\u044B\u0440\u0443\u0431\u0438\u0442\u0435 \u043B\u0435\u0441,
+            \u043E\u0431\u043E\u0440\u0432\u0435\u0442\u0435 \u043A\u0443\u0441\u0442\u044B,
+            \u0443\u0431\u044C\u0435\u0442\u0435 \u0436\u0438\u0432\u043E\u0442\u043D\u044B\u0445. "
+    - rid: 5913163258940096705
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 291.8291
+          y: 960.6706
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096706
+    - rid: 5913163258940096706
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 0f10096c-23e4-4964-be24-28778352b0e5
+        _data:
+          _speakerId: Shamanka
+          _text: "\u041D\u0435 \u043F\u043E\u0437\u0432\u043E\u043B\u044E! \u041F\u0440\u043E\u043A\u043B\u0438\u043D\u0430\u044E!
+            \u041F\u0440\u043E\u043A\u043B\u0438\u043D\u0430\u044E \u043A\u0430\u0436\u0434\u043E\u0433\u043E!\n"
+    - rid: 5913163258940096707
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 634.10046
+          y: 961.4037
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096708
+    - rid: 5913163258940096708
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: cdb2d534-a7cf-4327-8a33-b43f77a8bca8
+        _data:
+          _speakerId: Narrator
+          _text: "\u0412\u0438\u0437\u0433 \u0448\u0430\u043C\u0430\u043D\u043A\u0438
+            \u0435\u0449\u0435 \u043D\u0435 \u0443\u0441\u043F\u0435\u043B \u0437\u0430\u0442\u0438\u0445\u043D\u0443\u0442\u044C,
+            \u0430 \u0434\u0443\u0445 \u0435\u0435 \u0443\u0436\u0435 \u0440\u0430\u0441\u0442\u0432\u043E\u0440\u0438\u043B\u0441\u044F. "
+    - rid: 5913163258940096709
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 987.9018
+          y: 961.1448
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096710
+    - rid: 5913163258940096710
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: ca8c1305-e317-498a-a1bd-2296741e4f2d
+        _data:
+          _speakerId: MainCharacter
+          _text: "\u0427\u0442\u043E \u0442\u0435\u043F\u0435\u0440\u044C, \u0412\u043B\u0430\u0434\u0438\u043C\u0438\u0440
+            \u041A\u043B\u0430\u0432\u0434\u0438\u0435\u0432\u0438\u0447?"
+    - rid: 5913163258940096711
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 298.9983
+          y: 1140.7803
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096712
+    - rid: 5913163258940096712
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 7fce1048-415c-4be0-a3c8-47d900f50ca3
+        _data:
+          _speakerId: Arseniev
+          _text: "\u041E\u0442\u0440\u044F\u0434, \u043D\u0435 \u043E\u0442\u0447\u0430\u0438\u0432\u0430\u0439\u0442\u0435\u0441\u044C!
+            \u041C\u044B \u0437\u043D\u0430\u0435\u043C, \u0447\u0442\u043E \u043D\u0435
+            \u0436\u0435\u043B\u0430\u0435\u043C \u0437\u043B\u0430 \u044D\u0442\u043E\u043C\u0443
+            \u043C\u0435\u0441\u0442\u0443. \u0411\u0443\u0434\u0435\u043C \u043C\u043E\u043B\u0438\u0442\u044C\u0441\u044F
+            \u0438 \u0438\u0434\u0442\u0438 \u0441\u0432\u043E\u0435\u0439 \u0434\u043E\u0440\u043E\u0433\u043E\u0439."
+    - rid: 5913163258940096713
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 663.2069
+          y: 1157.6165
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096714
+    - rid: 5913163258940096714
+      type: {class: BranchingDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 958ed015-5876-4d56-82fe-a2ad92d12cd6
+        _options:
+        - "\u041C\u043E\u0436\u0435\u0442 \u0432\u043E\u043E\u0431\u0449\u0435 \u044D\u0442\u043E\u0433\u043E
+          \u0438 \u043D\u0435 \u0431\u044B\u043B\u043E. \u041C\u043E\u0436\u0435\u0442,
+          \u0441 \u0443\u043C\u0430 \u043C\u044B \u0432\u0441\u0435 \u0441\u043E\u0448\u043B\u0438\u2026"
+        - "\u041C\u044B \u0442\u043E\u0447\u043D\u043E \u0447\u0442\u043E-\u0442\u043E
+          \u0441\u0442\u0440\u0430\u043D\u043D\u043E\u0435 \u0441\u044A\u0435\u043B\u0438
+          \u0438 \u043D\u0430\u043C \u0442\u0435\u043F\u0435\u0440\u044C \u0441\u0442\u0440\u0430\u043D\u043D\u043E\u0441\u0442\u0438
+          \u043A\u0430\u0436\u0443\u0442\u0441\u044F"
+    - rid: 5913163258940096715
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 975.4872
+          y: 1120.3043
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096716
+    - rid: 5913163258940096716
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 8831409e-bcd5-4b19-b639-dfe3d5c60bf8
+        _data:
+          _speakerId: Narrator
+          _text: "\u041C\u043E\u043B\u043D\u0438\u044F \u0432\u043D\u043E\u0432\u044C
+            \u043F\u0440\u043E\u0440\u0435\u0437\u0430\u0435\u0442 \u043D\u0435\u0431\u043E.
+            \u0416\u0443\u0442\u043A\u0438\u0439 \u0442\u0440\u0435\u0441\u043A.
+            \u041E\u0433\u0440\u043E\u043C\u043D\u0430\u044F \u0435\u043B\u044C \u0432\u0430\u043B\u0438\u0442\u0441\u044F
+            \u0432 \u0440\u0435\u043A\u0443, \u043F\u0440\u0435\u0433\u0440\u0430\u0436\u0434\u0430\u044F
+            \u043F\u0443\u0442\u044C."
+    - rid: 5913163258940096717
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 366.38974
+          y: 1302.9545
+          width: 400
+          height: 150
+        _value:
+          rid: 5913163258940096718
+    - rid: 5913163258940096718
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 6b4463a7-a645-443f-8976-deb26133773b
+        _data:
+          _speakerId: Arseniev
+          _text: "\u041E\u0442\u0440\u044F\u0434, \u043A\u0430\u0436\u0434\u044B\u0439
+            \u0431\u0435\u0440\u0435\u0442 \u0441\u0442\u043E\u043B\u044C\u043A\u043E,
+            \u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0441\u043C\u043E\u0436\u0435\u0442
+            \u043D\u0435\u0441\u0442\u0438 \u043D\u0430 \u0441\u0435\u0431\u0435,
+            \u043D\u0435 \u0443\u0442\u043E\u043D\u0443\u0432. \u0413\u043E\u0442\u043E\u0432\u044C\u0442\u0435\u0441\u044C
+            \u043F\u0440\u044B\u0433\u0430\u0442\u044C \u0432 \u0432\u043E\u0434\u0443!
+            \u0414\u0435\u0440\u0435\u0432\u043E \u043D\u0430\u043C \u043D\u0438\u043A\u0430\u043A
+            \u043D\u0435 \u043E\u043F\u043B\u044B\u0442\u044C"

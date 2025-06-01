@@ -3,6 +3,8 @@ using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
+using Sopka;
+using TMPro;
 using UnityEngine;
 using Whaledevelop.Dialogs.UI;
 using Whaledevelop.UI;
@@ -63,17 +65,27 @@ namespace Whaledevelop.Dialogs
         
         private void StartDialog()
         {
-            var sprites = _dialogSettings.SpeakersSettings.Select(speaker => speaker.Icon).ToArray();
-            _dialogViewModel = new DialogViewModel(sprites, _dialogSettings.StartBackground, OnClickNext, OnOptionSelected, _uISettings.TextAppendInterval, EndDialog);
+            // var sprites = _dialogSettings.SpeakersSettings.Select(speaker => speaker.Icon).ToArray();
+            _dialogViewModel = new DialogViewModel(_dialogSettings.StartBackground,
+                OnClickNext, OnOptionSelected, _uISettings.TextAppendInterval, EndDialog, OnClickItem);
             _uiService.OpenView(_uISettings.DialogView, _dialogViewModel);
     
             UniTaskUtility.ExecuteAfterSeconds(_uISettings.StartDialogDelay, ProcessEndNode, CancellationToken.None);
         }
 
-        // private void SkipDialog()
-        // {
-        //     
-        // }
+        private void OnClickItem(ItemCode itemCode)
+        {
+            if (_dialogViewModel.ItemsStatuses.ContainsKey(itemCode))
+            {
+                _dialogViewModel.ItemsStatuses[itemCode] = false;
+                
+                if (itemCode == ItemCode.Snake)
+                {
+                    _diContainer.Inject(_uISettings.HideSnakeAction);
+                    _uISettings.HideSnakeAction.Execute();
+                }
+            }
+        }
 
         private void OnClickNext()
         {
@@ -121,8 +133,19 @@ namespace Whaledevelop.Dialogs
                 }
                 case LineDialogNode lineNode:
                 {
-                    var nameText = GetSpeakerNameText(lineNode);
-                    _dialogViewModel.DialogLine.Value = (nameText, lineNode.Text);
+                    var speakerSettings = _dialogSettings.SpeakersSettings.FirstOrDefault(s => s.Id == lineNode.SpeakerId);
+                    if (speakerSettings == null)
+                    {
+                        Debug.LogError($"Speaker with id {lineNode.SpeakerId} not found");
+                        break;
+                    }
+                    var nameText = speakerSettings.GetNameText();
+                    _dialogViewModel.SpeakerName.Value = nameText;
+                    _dialogViewModel.SpeakerSprite.Value = speakerSettings.Icon;
+                    var isNarrator = lineNode.SpeakerId == _uISettings.NarratorSettings.Id;
+                    _dialogViewModel.FontStyle.Value = isNarrator ? FontStyles.Italic : FontStyles.Normal;
+                    _dialogViewModel.MainText.Value = lineNode.Text;
+
                     
                     break;
                 }
@@ -137,10 +160,35 @@ namespace Whaledevelop.Dialogs
                     ProcessActionNode(actionDialogNode).Forget();
                     break;
                 }
-                case VisualSettingsDialogNode visualSettingsDialogNode:
+                case VisualsDialogNode visualsDialogNode:
                 {
-                    _dialogViewModel.BackgroundSprite.Value = visualSettingsDialogNode.BackgroundSprite;
+                    if (visualsDialogNode.ChangeBackgroundSprite)
+                    {
+                        _dialogViewModel.BackgroundSprite.Value = visualsDialogNode.BackgroundSprite;
+                    }
+                    else if (visualsDialogNode.ChangeItemStatus)
+                    {
+                        _dialogViewModel.ItemsStatuses.Set(visualsDialogNode.ItemCode, visualsDialogNode.ItemStatus);
+                    }
                     ProcessEndNode();
+                    break;
+                }
+                case WaitClickItemDialogNode waitClickItemDialogNode :
+                {
+                    _dialogViewModel.Options.Clear(); // костыль чтобы кнопку убрать
+                    if (!_dialogViewModel.ItemsStatuses.TryGetValue(waitClickItemDialogNode.ItemCode, out var status))
+                    {
+                        ProcessEndNode();
+                        break;
+                    }
+                    if (status)
+                    {
+                        WaitItemStatusAsync(waitClickItemDialogNode.ItemCode, false, CancellationToken.None).Forget();
+                    }
+                    else
+                    {
+                        ProcessEndNode();
+                    }
                     break;
                 }
                 default:
@@ -148,16 +196,11 @@ namespace Whaledevelop.Dialogs
             }
         }
 
-        private string GetSpeakerNameText(LineDialogNode lineNode)
+        private async UniTask WaitItemStatusAsync(ItemCode itemCode, bool waitStatus, CancellationToken cancellationToken)
         {
-            var speaker = _dialogSettings.SpeakersSettings.FirstOrDefault(s => s.Id == lineNode.SpeakerId);
-            if (speaker == null || string.IsNullOrEmpty(speaker.DisplayName))
-            {
-                return string.Empty;
-            }
-            var displayName = speaker.DisplayName;
-            var nameColor = ColorUtility.ToHtmlStringRGB(speaker.NameColor);
-            return $"<color=#{nameColor}>{displayName}</color>";
+            await UniTask.WaitUntil(() => _dialogViewModel.ItemsStatuses.TryGetValue(itemCode, out var status) && waitStatus == status, 
+                cancellationToken: cancellationToken);
+            ProcessEndNode();
         }
 
         private async UniTask ProcessActionNode(ActionDialogNode actionDialogNode)
