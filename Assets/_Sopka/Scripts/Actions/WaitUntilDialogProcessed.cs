@@ -12,7 +12,13 @@ namespace Sopka
     {
         [SerializeField] private DialogSettings _dialogSettings;
 
-        [Inject] private IGameModel _gameModel;
+        private IGameModel _gameModel;
+        
+        [Inject]
+        private void Construct(IGameModel gameModel)
+        {
+            _gameModel = gameModel;
+        }
         
         public override UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {

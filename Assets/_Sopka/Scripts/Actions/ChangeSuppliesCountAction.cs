@@ -9,7 +9,13 @@ namespace Sopka
     {
         [SerializeField] private int _changeCount;
         
-        [Inject] private IGameModel _gameModel;
+        private IGameModel _gameModel;
+        
+        [Inject]
+        private void Construct(IGameModel gameModel)
+        {
+            _gameModel = gameModel;
+        }
         
         public void Execute()
         {

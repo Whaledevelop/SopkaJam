@@ -31,11 +31,18 @@ namespace Sopka
 
         private PuzzlePieceView _selected;
 
-        [Inject] private IPuzzleModel _puzzleModel;
+        private IPuzzleModel _puzzleModel;
 
-        [Inject] private IUIService _uiService;
+        private IUIService _uiService;
 
         private PuzzleUIViewModel _puzzleUIViewModel;
+        
+        [Inject]
+        private void Construct(IPuzzleModel puzzleModel, IUIService uiService)
+        {
+            _puzzleModel = puzzleModel;
+            _uiService = uiService;
+        }
 
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {

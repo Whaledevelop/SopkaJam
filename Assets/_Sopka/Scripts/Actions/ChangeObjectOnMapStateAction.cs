@@ -15,7 +15,13 @@ namespace Sopka
 
         [SerializeField] private bool _state;
 
-        [Inject] private IGameModel _gameModel;
+        private IGameModel _gameModel;
+        
+        [Inject]
+        private void Construct(IGameModel gameModel)
+        {
+            _gameModel = gameModel;
+        }
         
         public override UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {

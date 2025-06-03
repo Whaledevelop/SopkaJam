@@ -19,13 +19,18 @@ namespace Sopka
         [SerializeField]
         private float _moveSpeed = 3f;
 
-        [Inject]
         private IGameModel _gameModel;
 
         private TopDownGameInput _topDownGameInput;
         private TopDownPlayerView _topDownPlayerView;
 
         private readonly List<IDisposable> _disposables = new();
+
+        [Inject]
+        private void Construct(IGameModel gameModel)
+        {
+            _gameModel = gameModel;
+        }
 
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {

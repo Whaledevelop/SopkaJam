@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: GameStatesService
   m_EditorClassIdentifier: 
   _defaultTransition:
-    rid: 5913163185803493460
+    rid: 8136316855937663058
   _transitionEntries: []
   references:
     version: 2
     RefIds:
-    - rid: 5913163185803493460
-      type: {class: GameSystemsGameTransition, ns: Whaledevelop.Transitions, asm: Assembly-CSharp}
+    - rid: 8136316855937663058
+      type: {class: GameSystemsGameTransition, ns: Whaledevelop.GameStates, asm: Assembly-CSharp}
       data:
         _keepDuplicateSystems: 1

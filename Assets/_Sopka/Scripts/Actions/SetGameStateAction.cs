@@ -13,7 +13,13 @@ namespace Sopka
         [SerializeField]
         private GameState _gameState;
         
-        [Inject] private IGameStatesService _gameStatesService;
+        private IGameStatesService _gameStatesService;
+        
+        [Inject]
+        private void Construct(IGameStatesService gameStatesService)
+        {
+            _gameStatesService = gameStatesService;
+        }
         
         public override UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {

@@ -29,13 +29,10 @@ namespace Sopka
         [SerializeField]
         private AudioBank _audioBank;
 
-        [Inject]
         private IGameModel _gameModel;
 
-        [Inject]
         private IGameStatesService _gameStatesService;
 
-        [Inject]
         private SceneModel _sceneModel;
 
         private AudioSource _currentMusic;
@@ -51,6 +48,14 @@ namespace Sopka
         private const float MinDb = -80f;
 
         private const float MaxDb = 0f;
+        
+        [Inject]
+        private void Construct(IGameModel gameModel, IGameStatesService gameStatesService, SceneModel sceneModel)
+        {
+            _gameModel = gameModel;
+            _gameStatesService = gameStatesService;
+            _sceneModel = sceneModel;
+        }
 
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {

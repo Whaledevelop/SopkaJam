@@ -26,12 +26,17 @@ namespace Sopka
         [SerializeField]
         private float _revealRadius = 5f;
 
-        [Inject]
         private IGameModel _gameModel;
 
         private Vector2 _fogWorldSize;
 
         private Vector2 _fogWorldOrigin;
+        
+        [Inject]
+        private void Construct(IGameModel gameModel)
+        {
+            _gameModel = gameModel;
+        }
 
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {

@@ -13,12 +13,18 @@ namespace Sopka
 
         [SerializeReference] private IAction _afterPuzzleSolvedAction;
         
-        [Inject] private IDiContainer _diContainer;
+        private IDiContainer _diContainer;
+        
+        [Inject]
+        private void Construct(IDiContainer diContainer)
+        {
+            _diContainer = diContainer;
+        }
         
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {
-            _puzzleModelInstaller.Container = _diContainer;
-            _puzzleModelInstaller.InstallBindings();
+            // _puzzleModelInstaller.Container = _diContainer;
+            // _puzzleModelInstaller.InstallBindings();
 
             if (_puzzleModelInstaller.Container.TryResolve<IPuzzleModel>(out var puzzleModel))
             {
@@ -29,7 +35,6 @@ namespace Sopka
 
         private void OnPuzzleSolved()
         {
-            Debug.Log("Puzzle Solved");
             _diContainer.Inject(_afterPuzzleSolvedAction);
             _afterPuzzleSolvedAction.Execute();
         }

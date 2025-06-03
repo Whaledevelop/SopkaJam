@@ -16,11 +16,15 @@ namespace Sopka
         [SerializeField]
         private ObjectOnMapEventData[] _objectOnMapEventsData;
         
-        [Inject] private IGameModel _gameModel;
-
-        [Inject] private IDiContainer _diContainer;
+        private IGameModel _gameModel;
         
         private readonly List<IDisposable> _subscriptions = new();
+        
+        [Inject]
+        private void Construct(IGameModel gameModel)
+        {
+            _gameModel = gameModel;
+        }
         
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {

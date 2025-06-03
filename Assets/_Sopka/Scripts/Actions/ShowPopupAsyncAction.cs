@@ -22,11 +22,17 @@ namespace Sopka
 
         [SerializeField] private string _buttonText = "Продолжить";
         
-        [Inject] private IUIService _uiService;
+        private IUIService _uiService;
         
         private MapPopupViewModel _mapPopupViewModel;
 
         private bool _popupClosed;
+        
+        [Inject]
+        private void Construct(IUIService uiService)
+        {
+            _uiService = uiService;
+        }
         
         public override async UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {

@@ -12,8 +12,14 @@ namespace Sopka
         private ConditionCode _conditionCode;
 
         [SerializeField] private bool _state = true;
-        [Inject]
+        
         private IGameModel _gameModel;
+        
+        [Inject]
+        private void Construct(IGameModel gameModel)
+        {
+            _gameModel = gameModel;
+        }
         
         public void Execute()
         {

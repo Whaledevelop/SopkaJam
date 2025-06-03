@@ -20,9 +20,16 @@ namespace Sopka
         [SerializeField] 
         private bool _notStartIfAlreadyProcessed = true;
         
-        [Inject] private IGameModel _gameModel;
+        private IGameModel _gameModel;
 
-        [Inject] private IGameStatesService _gameStatesService;
+        private IGameStatesService _gameStatesService;
+        
+        [Inject]
+        private void Construct(IGameModel gameModel, IGameStatesService gameStatesService)
+        {
+            _gameModel = gameModel;
+            _gameStatesService = gameStatesService;
+        }
         
         public override UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {

@@ -12,11 +12,19 @@ namespace Sopka
     [CreateAssetMenu(menuName = "Sopka/States/DialogGameState", fileName = "DialogGameState")]
     public class DialogGameState : GameState
     {
-        [Inject] private IGameModel _gameModel;
+        private IGameModel _gameModel;
 
-        [Inject] private IDialogsService _dialogsService;
+        private IDialogsService _dialogsService;
 
-        [Inject] private IDiContainer _diContainer;
+        private IDiContainer _diContainer;
+        
+        [Inject]
+        private void Construct(IGameModel gameModel, IDialogsService dialogsService, IDiContainer diContainer)
+        {
+            _gameModel = gameModel;
+            _dialogsService = dialogsService;
+            _diContainer = diContainer;
+        }
         
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {

@@ -19,7 +19,6 @@ namespace Sopka
         [SerializeField]
         private GnusView _gnusViewPrefab;
 
-        [Inject]
         private IGameModel _gameModel;
 
         private readonly List<IDisposable> _subscriptions = new();
@@ -29,6 +28,12 @@ namespace Sopka
         private readonly List<MapPathCode> _pathsWithActiveGnus = new();
 
         private readonly Dictionary<MapPathCode, List<GnusView>> _activeGnus = new();
+        
+        [Inject]
+        private void Construct(IGameModel gameModel)
+        {
+            _gameModel = gameModel;
+        }
 
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {

@@ -18,11 +18,19 @@ namespace Sopka
 
         [SerializeReference] private IAction _startGameAction;
         
-        [Inject] private IUIService _uiService;
+        private IUIService _uiService;
 
-        [Inject] private IDiContainer _diContainer;
+        private IDiContainer _diContainer;
         
         private StartMenuViewModel _startMenuViewModel;
+        
+        [Inject]
+        private void Construct(IUIService uiService, IDiContainer diContainer)
+        {
+            _uiService = uiService;
+            _diContainer = diContainer;
+        }
+        
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {
             _startMenuViewModel = new StartMenuViewModel(OnClickStart, OnClickQuit);

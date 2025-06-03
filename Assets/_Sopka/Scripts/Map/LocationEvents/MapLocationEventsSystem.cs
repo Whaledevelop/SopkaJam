@@ -19,11 +19,18 @@ namespace Sopka
         
         // [SerializeField]
 
-        [Inject] private IGameModel _gameModel;
+        private IGameModel _gameModel;
 
-        [Inject] private IDiContainer _diContainer;
+        private IDiContainer _diContainer;
 
         private List<IDisposable> _subscriptions = new();
+        
+        [Inject]
+        private void Construct(IGameModel gameModel, IDiContainer diContainer)
+        {
+            _gameModel = gameModel;
+            _diContainer = diContainer;
+        }
         
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {

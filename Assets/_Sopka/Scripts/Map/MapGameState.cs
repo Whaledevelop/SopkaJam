@@ -28,13 +28,21 @@ namespace Sopka
 
         [SerializeField] private MapHUDView _mapHUDViewPrefab;
         
-        [Inject] private IGameModel _gameModel;
+        private IGameModel _gameModel;
 
-        [Inject] private IDiContainer _diContainer;
+        private IDiContainer _diContainer;
 
-        [Inject] private IUIService _uiService;
+        private IUIService _uiService;
         
         private MapHUDViewModel _mapHUDViewModel;
+        
+        [Inject]
+        private void Construct(IGameModel gameModel, IUIService uiService, IDiContainer diContainer)
+        {
+            _gameModel = gameModel;
+            _uiService = uiService;
+            _diContainer = diContainer;
+        }
         
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {

@@ -19,10 +19,15 @@ namespace Sopka
         
         private ReceiveItemUIViewModel _viewModel;
         
-        [Inject]
         private IUIService _uiService;
 
         private bool _clicked;
+        
+        [Inject]
+        private void Construct(IUIService uiService)
+        {
+            _uiService = uiService;
+        }
         
         public override async UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {

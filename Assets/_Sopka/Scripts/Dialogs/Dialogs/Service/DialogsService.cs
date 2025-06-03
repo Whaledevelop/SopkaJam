@@ -14,8 +14,13 @@ namespace Whaledevelop.Dialogs
         [SerializeField]
         private DialogUISettings _dialogUISettings;
 
-        [Inject]
         private IDiContainer _diContainer;
+        
+        [Inject]
+        private void Construct(IDiContainer diContainer)
+        {
+            _diContainer = diContainer;
+        }
         
         public async UniTask ExecuteDialogAsync(IDialogSettings dialogSettings, CancellationToken cancellationToken)
         {

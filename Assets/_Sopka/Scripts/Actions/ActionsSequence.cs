@@ -11,7 +11,13 @@ namespace Sopka
     {
         [SerializeReference] private IAction[] _actions;
          
-        [Inject] private IDiContainer _diContainer;
+        private IDiContainer _diContainer;
+        
+        [Inject]
+        private void Construct(IDiContainer diContainer)
+        {
+            _diContainer = diContainer;
+        }
         
         public void Execute()
         {

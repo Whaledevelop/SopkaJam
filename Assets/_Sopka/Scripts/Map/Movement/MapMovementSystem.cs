@@ -33,10 +33,16 @@ namespace Sopka
         private float _baseDuration;
         private float _currentTweenDistance;
 
-        [Inject] private IGameModel _gameModel;
+        private IGameModel _gameModel;
 
         private readonly List<IDisposable> _subscriptions = new();
 
+        [Inject]
+        private void Construct(IGameModel gameModel)
+        {
+            _gameModel = gameModel;
+        }
+        
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {
             foreach (var (locationCode, locationView) in _gameModel.MapModel.MapView.MapLocationViews)

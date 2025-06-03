@@ -20,10 +20,8 @@ namespace Whaledevelop.Dialogs
         [ShowInInspector]
         private DialogProfile _dialogProfile;
 
-        [Inject]
         private IDiContainer _diContainer;
 
-        [Inject]
         private IUIService _uiService;
         
         public event Action<string> OnEndNode;
@@ -33,6 +31,13 @@ namespace Whaledevelop.Dialogs
         private DialogView _dialogView;
         private DialogNode _currentNode;
         private DialogViewModel _dialogViewModel;
+        
+        [Inject]
+        private void Construct(IUIService uiService, IDiContainer diContainer)
+        {
+            _uiService = uiService;
+            _diContainer = diContainer;
+        }
         
         public DialogProcessor(IDialogSettings dialogSettings, DialogUISettings uiSettings)
         {

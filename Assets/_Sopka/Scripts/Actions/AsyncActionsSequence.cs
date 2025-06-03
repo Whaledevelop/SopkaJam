@@ -11,7 +11,13 @@ namespace Sopka
     {
         [SerializeReference] private IAsyncAction[] _actions;
         
-        [Inject] private IDiContainer _diContainer;
+        private IDiContainer _diContainer;
+        
+        [Inject]
+        private void Construct(IDiContainer diContainer)
+        {
+            _diContainer = diContainer;
+        }
         
         public override async UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {

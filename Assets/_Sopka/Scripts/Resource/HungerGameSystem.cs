@@ -13,14 +13,20 @@ namespace Sopka
     {
         [SerializeReference] private IAction _deathAction;
         
-        [Inject] 
         private IGameModel _gameModel;
 
-        [Inject] private IDiContainer _diContainer;
+        private IDiContainer _diContainer;
 
         private float _hungerTimer;
 
         private bool _restarting;
+        
+        [Inject]
+        private void Construct(IGameModel gameModel, IDiContainer diContainer)
+        {
+            _gameModel = gameModel;
+            _diContainer = diContainer;
+        }
 
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {

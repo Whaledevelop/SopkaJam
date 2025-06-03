@@ -16,15 +16,20 @@ namespace Sopka
 
         [SerializeField] private GameObject _locationPrefab;
         
-        [Inject] private IGameModel _gameModel;
-
-        [Inject] private IGameSystemsService _gameSystemsService;
+        private IGameModel _gameModel;
         
-        [Inject] private SceneModel _sceneModel;
+        private SceneModel _sceneModel;
 
         private GameObject _locationInstance;
         
         private TopDownPlayerView _topDownPlayerView;
+
+        [Inject]
+        private void Construct(IGameModel gameModel, SceneModel sceneModel)
+        {
+            _gameModel = gameModel;
+            _sceneModel = sceneModel;
+        }
         
         protected override UniTask OnInitializeAsync(CancellationToken cancellationToken)
         {
