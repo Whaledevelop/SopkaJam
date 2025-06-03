@@ -303,8 +303,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: -110.18737
-          y: 480.9767
+          x: -147.18738
+          y: 409.97665
           width: 400
           height: 150
         _value:

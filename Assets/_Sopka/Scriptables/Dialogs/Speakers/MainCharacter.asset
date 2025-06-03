@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4911f8032b5d43c1acfa04c6606ee59d, type: 3}
   m_Name: MainCharacter
   m_EditorClassIdentifier: 
-  _displayName: "\u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0433\u0435\u0440\u043E\u0439"
+  _displayName: "\u041A\u0443\u0437\u043D\u0435\u0446\u043E\u0432 \u0418.\u0418."
   _icon: {fileID: 21300000, guid: 3294de50caa243c4bbf1ec83d67eb7bd, type: 3}
   _textColor: {r: 0, g: 0.050397873, b: 1, a: 1}

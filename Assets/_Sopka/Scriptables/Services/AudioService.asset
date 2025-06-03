@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1940ceb201d8438bb1b802bb4916d7b7, type: 3}
+  m_Name: AudioService
+  m_EditorClassIdentifier: 
+  _musicPrefab: {fileID: 759921870743637347, guid: 028933663e56d0c4facae2dda479e852, type: 3}
+  _fadeDuration: 0
+  _musicGroup: {fileID: 24300002, guid: bac6406b63a51d74cbb798021a6295b0, type: 2}
+  _audioBank: {fileID: 11400000, guid: 6af3923a5833fa043872ce64621b6b35, type: 2}

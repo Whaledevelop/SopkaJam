@@ -15,7 +15,6 @@ namespace Sopka
         
         public override async UniTask ExecuteAsync(CancellationToken cancellationToken = default)
         {
-            Debug.Log("AsyncActionsSequence");
             foreach (var action in _actions)
             {
                 _diContainer.Inject(action);

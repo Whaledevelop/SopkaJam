@@ -22,8 +22,6 @@ MonoBehaviour:
   - rid: 8136316807726760249
   - rid: 8136316807726760251
   - rid: 8136316807726760253
-  - rid: 8136316807726760255
-  - rid: 8136316807726760257
   - rid: 8136316807726760259
   - rid: 8136316807726760261
   - rid: 8136316807726760263
@@ -32,14 +30,11 @@ MonoBehaviour:
   - rid: 8136316807726760269
   - rid: 8136316807726760271
   - rid: 8136316807726760273
+  - rid: 8136316807726760445
   _edges:
   - _inputNodeGuid: 94548243-67ea-4ffe-a333-8cbafbd5e8ff
     _inputPortName: Start
     _outputNodeGuid: 4dede87f-ffb8-4dbd-ac6b-a57ea172dfb1
-    _outputPortName: Next
-  - _inputNodeGuid: 2ec71620-3c59-430d-ac34-03c9754c8b63
-    _inputPortName: Start
-    _outputNodeGuid: 94548243-67ea-4ffe-a333-8cbafbd5e8ff
     _outputPortName: Next
   - _inputNodeGuid: 51dc25f1-ec8c-4324-84b6-17c1aa6dd9a7
     _inputPortName: Start
@@ -71,33 +66,9 @@ MonoBehaviour:
     _inputPortName: Start
     _outputNodeGuid: f2c3b876-2bfc-4291-a796-91d6b87ec6d4
     _outputPortName: Next
-  - _inputNodeGuid: 91187bc7-25e6-40fd-b6eb-db446a9dc5b0
-    _inputPortName: Start
-    _outputNodeGuid: 7c03bc63-7619-452a-a139-74af8c5c4308
-    _outputPortName: Next
-  - _inputNodeGuid: 587597e4-ff2d-49c3-961b-3bf152c3c899
-    _inputPortName: Start
-    _outputNodeGuid: 91187bc7-25e6-40fd-b6eb-db446a9dc5b0
-    _outputPortName: Next
-  - _inputNodeGuid: cebe73c9-537e-494d-b649-fa19033aaf3e
-    _inputPortName: Start
-    _outputNodeGuid: 587597e4-ff2d-49c3-961b-3bf152c3c899
-    _outputPortName: Next
-  - _inputNodeGuid: 0fe6183b-d4d9-4edc-a985-68719d6d80f3
-    _inputPortName: Start
-    _outputNodeGuid: cebe73c9-537e-494d-b649-fa19033aaf3e
-    _outputPortName: Next
   - _inputNodeGuid: ca3f4d83-6505-49a8-b029-640ed6a732c4
     _inputPortName: Start
     _outputNodeGuid: 0fe6183b-d4d9-4edc-a985-68719d6d80f3
-    _outputPortName: Next
-  - _inputNodeGuid: 2c0f26ac-b72a-4c1e-8cd6-3f43a4ac0f19
-    _inputPortName: Start
-    _outputNodeGuid: ca3f4d83-6505-49a8-b029-640ed6a732c4
-    _outputPortName: Next
-  - _inputNodeGuid: 3534ab51-8101-40ed-af4d-c670c85b224d
-    _inputPortName: Start
-    _outputNodeGuid: 2c0f26ac-b72a-4c1e-8cd6-3f43a4ac0f19
     _outputPortName: Next
   - _inputNodeGuid: 85682f37-b728-48b1-9dae-a3d6abd22542
     _inputPortName: Start
@@ -110,6 +81,30 @@ MonoBehaviour:
   - _inputNodeGuid: 74414a9a-286a-4896-84cb-6a54bbb61b48
     _inputPortName: Start
     _outputNodeGuid: 4a53f0b9-4848-4dfa-9964-082fe8a081b5
+    _outputPortName: Next
+  - _inputNodeGuid: cebe73c9-537e-494d-b649-fa19033aaf3e
+    _inputPortName: Start
+    _outputNodeGuid: 7c03bc63-7619-452a-a139-74af8c5c4308
+    _outputPortName: Next
+  - _inputNodeGuid: 2c0f26ac-b72a-4c1e-8cd6-3f43a4ac0f19
+    _inputPortName: Start
+    _outputNodeGuid: cebe73c9-537e-494d-b649-fa19033aaf3e
+    _outputPortName: Next
+  - _inputNodeGuid: 0fe6183b-d4d9-4edc-a985-68719d6d80f3
+    _inputPortName: Start
+    _outputNodeGuid: 2c0f26ac-b72a-4c1e-8cd6-3f43a4ac0f19
+    _outputPortName: Next
+  - _inputNodeGuid: 3534ab51-8101-40ed-af4d-c670c85b224d
+    _inputPortName: Start
+    _outputNodeGuid: ca3f4d83-6505-49a8-b029-640ed6a732c4
+    _outputPortName: Next
+  - _inputNodeGuid: 1d569b37-e29c-4130-8f58-2bd8584833d4
+    _inputPortName: Start
+    _outputNodeGuid: 94548243-67ea-4ffe-a333-8cbafbd5e8ff
+    _outputPortName: Next
+  - _inputNodeGuid: 2ec71620-3c59-430d-ac34-03c9754c8b63
+    _inputPortName: Start
+    _outputNodeGuid: 1d569b37-e29c-4130-8f58-2bd8584833d4
     _outputPortName: Next
   references:
     version: 2
@@ -156,13 +151,7 @@ MonoBehaviour:
             \u043E\u0431\u0435\u0441\u0441\u0438\u043B\u0435\u043B\u0438?  \u041D\u0438\u043A\u0442\u043E
             \u043D\u0435 \u0441\u043F\u0430\u043B \u0432\u0441\u044E \u043D\u043E\u0447\u044C
             \u2014 \u0432\u0441\u0435 \u0441\u0442\u0440\u0430\u0434\u0430\u043B\u0438
-            \u0436\u0438\u0432\u043E\u0442\u0430\u043C\u0438\u2026 \u041A \u0440\u0430\u0441\u0441\u0432\u0435\u0442\u0443
-            \u0431\u043E\u043B\u0438 \u0443\u0441\u0438\u043B\u0438\u043B\u0438\u0441\u044C
-            \u0438 \u0434\u043E\u0448\u043B\u0438 \u0447\u0443\u0442\u044C \u043D\u0435
-            \u0434\u043E \u043E\u0431\u043C\u043E\u0440\u043E\u043A\u043E\u0432.
-            \u0412\u0441\u0435 \u043A\u043E\u0440\u0447\u0438\u043B\u0438\u0441\u044C
-            \u0438 \u043E\u0431\u043B\u0438\u0432\u0430\u043B\u0438\u0441\u044C \u043F\u043E\u0442\u043E\u043C\u201D.\n\u0418\u0437
-            \u0434\u043D\u0435\u0432\u043D\u0438\u043A\u0430 \u0410\u0440\u0441\u0435\u043D\u044C\u0435\u0432\u0430"
+            \u0436\u0438\u0432\u043E\u0442\u0430\u043C\u0438\u2026 "
     - rid: 8136316807726760241
       type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
       data:
@@ -287,8 +276,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: -145.503
-          y: 591.51697
+          x: -158.50302
+          y: 615.51697
           width: 400
           height: 150
         _value:
@@ -298,56 +287,22 @@ MonoBehaviour:
       data:
         _guid: 7c03bc63-7619-452a-a139-74af8c5c4308
         _data:
-          _speakerId: Narrator
+          _speakerId: MainCharacter
           _text: "\u0414\u0430 \u043D\u0435\u0442, \u0441\u043C\u043E\u0442\u0440\u0438\u0442\u0435!
             \u041A\u0430\u043C\u0435\u043D\u044C \u0443 \u0440\u0435\u043A\u0438
             \u0438 \u043F\u0440\u0438\u0433\u043E\u0440\u043E\u043A\u2026 \u041D\u0430
-            \u043C\u043E\u0433\u0438\u043B\u0443 \u043F\u043E\u0445\u043E\u0436\u0435!"
-    - rid: 8136316807726760255
-      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
-      data:
-        _position:
-          serializedVersion: 2
-          x: 188.04776
-          y: 592.2884
-          width: 400
-          height: 150
-        _value:
-          rid: 8136316807726760256
-    - rid: 8136316807726760256
-      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
-      data:
-        _guid: 91187bc7-25e6-40fd-b6eb-db446a9dc5b0
-        _data:
-          _speakerId: Narrator
-          _text: "\u0410 \u043D\u0430 \u043A\u0430\u043C\u043D\u0435 \u0441\u0438\u043C\u0432\u043E\u043B
+            \u043C\u043E\u0433\u0438\u043B\u0443 \u043F\u043E\u0445\u043E\u0436\u0435!
+            \u0410 \u043D\u0430 \u043A\u0430\u043C\u043D\u0435 \u0441\u0438\u043C\u0432\u043E\u043B
             \u043F\u043E\u0445\u043E\u0436 \u043D\u0430 \u0433\u043E\u043B\u043E\u0432\u0443
-            \u043C\u0435\u0434\u0432\u0435\u0434\u044F!"
-    - rid: 8136316807726760257
-      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
-      data:
-        _position:
-          serializedVersion: 2
-          x: -146.02388
-          y: 780.4176
-          width: 400
-          height: 150
-        _value:
-          rid: 8136316807726760258
-    - rid: 8136316807726760258
-      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
-      data:
-        _guid: 587597e4-ff2d-49c3-961b-3bf152c3c899
-        _data:
-          _speakerId: MainCharacter
-          _text: "\u041C\u043E\u0436\u0435\u0442 \u044D\u0442\u043E \u043E\u043D\u043E?"
+            \u043C\u0435\u0434\u0432\u0435\u0434\u044F! \u041C\u043E\u0436\u0435\u0442
+            \u044D\u0442\u043E \u043E\u043D\u043E?"
     - rid: 8136316807726760259
       type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
       data:
         _position:
           serializedVersion: 2
-          x: 154.33798
-          y: 779.9604
+          x: 162.33795
+          y: 615.9604
           width: 400
           height: 150
         _value:
@@ -367,8 +322,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: 3.58049
-          y: 973.88086
+          x: -172.41951
+          y: 812.88086
           width: 400
           height: 150
         _value:
@@ -387,8 +342,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: -332.12286
-          y: 952.48486
+          x: 185.87712
+          y: 813.4848
           width: 400
           height: 150
         _value:
@@ -408,8 +363,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: -206.79999
-          y: 1059.65
+          x: 367.19998
+          y: 812.6501
           width: 400
           height: 150
         _value:
@@ -424,8 +379,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: -315.7797
-          y: 1175.4268
+          x: -208.77972
+          y: 991.42676
           width: 400
           height: 150
         _value:
@@ -447,8 +402,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: 66.959915
-          y: 1175.1425
+          x: 174.9599
+          y: 991.14246
           width: 400
           height: 150
         _value:
@@ -466,8 +421,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: -295.9925
-          y: 1358.82
+          x: -208.99255
+          y: 1165.82
           width: 400
           height: 150
         _value:
@@ -487,8 +442,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: 127.83
-          y: 1358.72
+          x: 161.83002
+          y: 1165.72
           width: 400
           height: 150
         _value:
@@ -498,3 +453,26 @@ MonoBehaviour:
       data:
         _guid: 74414a9a-286a-4896-84cb-6a54bbb61b48
         _finishBranchId: 
+    - rid: 8136316807726760445
+      type: {class: DialogNodeViewData, ns: Whaledevelop.DialogNodeGraph, asm: Assembly-CSharp}
+      data:
+        _position:
+          serializedVersion: 2
+          x: 509.4786
+          y: -76.34232
+          width: 400
+          height: 150
+        _value:
+          rid: 8136316807726760446
+    - rid: 8136316807726760446
+      type: {class: LineDialogNode, ns: Whaledevelop.Dialogs, asm: Assembly-CSharp}
+      data:
+        _guid: 1d569b37-e29c-4130-8f58-2bd8584833d4
+        _data:
+          _speakerId: Narrator
+          _text: "\u041A \u0440\u0430\u0441\u0441\u0432\u0435\u0442\u0443 \u0431\u043E\u043B\u0438
+            \u0443\u0441\u0438\u043B\u0438\u043B\u0438\u0441\u044C \u0438 \u0434\u043E\u0448\u043B\u0438
+            \u0447\u0443\u0442\u044C \u043D\u0435 \u0434\u043E \u043E\u0431\u043C\u043E\u0440\u043E\u043A\u043E\u0432.
+            \u0412\u0441\u0435 \u043A\u043E\u0440\u0447\u0438\u043B\u0438\u0441\u044C
+            \u0438 \u043E\u0431\u043B\u0438\u0432\u0430\u043B\u0438\u0441\u044C \u043F\u043E\u0442\u043E\u043C\u201D.\n\u0418\u0437
+            \u0434\u043D\u0435\u0432\u043D\u0438\u043A\u0430 \u0410\u0440\u0441\u0435\u043D\u044C\u0435\u0432\u0430"

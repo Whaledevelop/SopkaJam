@@ -574,8 +574,8 @@ MonoBehaviour:
       data:
         _position:
           serializedVersion: 2
-          x: 975.4872
-          y: 1120.3043
+          x: 988.4872
+          y: 1141.3043
           width: 400
           height: 150
         _value:

@@ -7,11 +7,14 @@ namespace Sopka
         public Transform PlayerRoot;
 
         public Camera MainCamera;
+        
+        public Transform SoundsRoot;
 
-        public SceneModel(Transform playerRoot, Camera mainCamera)
+        public SceneModel(Transform playerRoot, Camera mainCamera, Transform soundsRoot)
         {
             PlayerRoot = playerRoot;
             MainCamera = mainCamera;
+            SoundsRoot = soundsRoot;
         }
     }
 }

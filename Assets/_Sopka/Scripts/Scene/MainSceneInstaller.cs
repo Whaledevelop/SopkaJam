@@ -13,10 +13,12 @@ namespace Sopka
         
         [SerializeField] 
         private Transform _playerRoot;
+
+        [SerializeField] private Transform _soundsRoot;
         
         public override void InstallBindings()
         {
-            var sceneModel = new SceneModel(_playerRoot, _mainCamera);
+            var sceneModel = new SceneModel(_playerRoot, _mainCamera, _soundsRoot);
             Container.Bind(sceneModel);
         }
     }

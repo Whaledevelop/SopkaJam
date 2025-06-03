@@ -169,7 +169,7 @@ MonoBehaviour:
       data:
         _guid: a3a91d66-3172-4dda-a87a-79216f77d583
         _data:
-          _speakerId: MainCharacter
+          _speakerId: Arseniev
           _text: "\u0412\u0435\u0440\u043E\u044F\u0442\u043D\u043E, \u0441\u043A\u043E\u0440\u043E
             \u0443\u043C\u0440\u0435\u0442\u2026"
     - rid: 8136316807726760133
@@ -189,7 +189,7 @@ MonoBehaviour:
       data:
         _guid: 2306e0d7-7cf8-4eb3-9402-c3db32fb162f
         _data:
-          _speakerId: MainCharacter
+          _speakerId: Arseniev
           _text: "\u041D\u0435 \u0441\u044B\u043F\u044C \u0441\u043E\u043B\u044C
             \u043D\u0430 \u0440\u0430\u043D\u0443, \u0418\u043B\u044C\u044F. \u0412\u0441\u0442\u0440\u0435\u0447\u0443\u0441\u044C
             \u0441 \u043D\u0435\u0439 \u043F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u0440\u0442\u0438."

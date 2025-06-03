@@ -71,7 +71,6 @@ namespace Sopka
             
             foreach (var (pathCode, pathGnusView) in mapModel.MapView.PathGnusViews)
             {
-                Debug.Log($"Update Gnus {pathCode}");
                 var pathOpened = mapModel.OpenedPaths.Contains(pathCode);
                 var isGnusActive = _pathsWithActiveGnus.Contains(pathCode);
                 if (pathOpened)
@@ -86,7 +85,6 @@ namespace Sopka
 
                     foreach (var gnusPoint in pathGnusView.GnusPoints)
                     {
-                        Debug.Log($"Create gnus");
                         var gnusView = _gnusPool.Get();
                         gnusView.transform.SetParent(gnusPoint);
                         gnusView.transform.localPosition = Vector3.zero;

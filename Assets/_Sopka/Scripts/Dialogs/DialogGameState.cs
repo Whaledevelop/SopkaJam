@@ -31,7 +31,9 @@ namespace Sopka
                 Debug.LogError("No CurrentDialogSettings");
                 return;
             }
+            _gameModel.DialogModel.ProcessingDialog.Value = dialogSettings;
             await _dialogsService.ExecuteDialogAsync(dialogSettings, cancellationToken);
+            _gameModel.DialogModel.ProcessingDialog.Value = null;
             _gameModel.DialogModel.ProcessedDialogs.Add(dialogSettings);
             _gameModel.DialogModel.PendingDialogSettings = null;
 
