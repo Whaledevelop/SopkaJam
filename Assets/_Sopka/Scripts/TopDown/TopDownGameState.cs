@@ -3,6 +3,8 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Whaledevelop;
+using Whaledevelop.GameStates;
+using Whaledevelop.GameSystems;
 
 namespace Sopka
 {

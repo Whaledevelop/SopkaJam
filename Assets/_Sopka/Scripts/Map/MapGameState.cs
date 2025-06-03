@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Whaledevelop;
+using Whaledevelop.GameStates;
 using Whaledevelop.Reactive;
 using Whaledevelop.UI;
 

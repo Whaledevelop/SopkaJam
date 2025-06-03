@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Whaledevelop;
 using Whaledevelop.Dialogs;
+using Whaledevelop.GameStates;
 
 namespace Sopka
 {

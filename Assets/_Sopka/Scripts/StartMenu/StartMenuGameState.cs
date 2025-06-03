@@ -3,6 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Whaledevelop;
+using Whaledevelop.GameStates;
 using Whaledevelop.UI;
 #if UNITY_EDITOR
 using UnityEditor;

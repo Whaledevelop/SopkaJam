@@ -7,6 +7,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Whaledevelop;
+using Whaledevelop.GameSystems;
 using Whaledevelop.Reactive;
 
 namespace Sopka

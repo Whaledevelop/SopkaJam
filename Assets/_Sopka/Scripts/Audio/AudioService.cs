@@ -8,6 +8,7 @@ using UnityEngine.Audio;
 using UnityEngine.Pool;
 using Whaledevelop;
 using Whaledevelop.Dialogs;
+using Whaledevelop.GameStates;
 using Whaledevelop.Reactive;
 using Whaledevelop.Services;
 

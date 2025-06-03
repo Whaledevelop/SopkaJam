@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Whaledevelop;
+using Whaledevelop.GameSystems;
 using Whaledevelop.Reactive;
 
 namespace Sopka

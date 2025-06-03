@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Whaledevelop;
+using Whaledevelop.GameSystems;
 
 namespace Sopka
 {
